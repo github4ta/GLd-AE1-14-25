@@ -40,7 +40,9 @@ public class Cart {
     public void deleteBook(Book book) {
         if (books.remove(book)) {
             System.out.println("Книга удалена");
-        } else System.out.println("Такой книги нет в корзине");
+        } else {
+            System.out.println("Такой книги нет в корзине");
+        }
     }
 
     public List<Book> getBooks() {
