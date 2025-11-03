@@ -9,7 +9,8 @@ public class Login {
             System.out.printf("Привет  «Пользователь" + " %s»" + "\n", user.getNumber());
         } else {
             Users.addUser(user);
-            System.out.printf("«%s Вы не были зарегистрированы, мы вас зарегистрировали. Повторите вход.»" + "\n", user.getNumber());
+            System.out.printf("«%s Вы не были зарегистрированы, мы вас зарегистрировали. Повторите вход.» \n",
+                    user.getNumber());
         }
     }
 
