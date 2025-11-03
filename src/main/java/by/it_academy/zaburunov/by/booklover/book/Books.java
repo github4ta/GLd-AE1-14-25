@@ -6,14 +6,14 @@ import java.util.List;
 public class Books {
     public static List<Book> filterBooksByAuthor(List<Book> books, String authorSurname) {
 
-        List<Book> resultListByAuthor = new ArrayList<>(); // создаем список который будем наполнять книгами
+        List<Book> resultListByAuthor = new ArrayList<>();
 
         for (int i = 0; i < books.size(); i++) {
 
-            Book book = books.get(i);  // текущая книга
-            String bookAuthorSurname = book.getAuthor().getSurname(); // фамилия автора текущей книги
+            Book book = books.get(i);
+            String bookAuthorSurname = book.getAuthor().getSurname();
 
-            if (bookAuthorSurname.equals(authorSurname)) { // если автор книги равен искомому автору
+            if (bookAuthorSurname.equals(authorSurname)) {
                 resultListByAuthor.add(book);
             }
         }
@@ -27,10 +27,10 @@ public class Books {
 
         for (int i = 0; i < books.size(); i++) {
 
-            Book book = books.get(i);  // текущая книга
-            String bookPublisher = book.getPublisher(); // издатель текущей книги
+            Book book = books.get(i);
+            String bookPublisher = book.getPublisher();
 
-            if (bookPublisher.equals(publisher)) { // если автор книги равен искомому автору
+            if (bookPublisher.equals(publisher)) {
                 resultListByPublisher.add(book);
             }
         }
@@ -42,8 +42,7 @@ public class Books {
 
         List<Book> resultListByIsbn = new ArrayList<>();
 
-        for (Book book : books) {  // тут пробую через forEach (тип данных + обзываем переменную : проходим по листу
-            // книг)
+        for (Book book : books) {
 
             if (book.getIsbn().equals(isbn)) {
                 resultListByIsbn.add(book);

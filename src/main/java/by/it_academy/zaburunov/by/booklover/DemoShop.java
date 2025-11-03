@@ -14,48 +14,41 @@ import java.util.List;
 public class DemoShop {
     public static void main(String[] args) {
 
-        // Авторы
         Author au1 = new Author("Алексей", "Иванов");
         Author au2 = new Author("Мария", "Петрова");
         Author au3 = new Author("Игорь", "Смирнов");
         Author au4 = new Author("Елена", "Кузнецова");
         Author au5 = new Author("Дмитрий", "Попов");
 
-        // Страницы
         int pages1 = 150;
         int pages2 = 220;
         int pages3 = 300;
         int pages4 = 420;
         int pages5 = 88;
 
-        // Издательства
         String pub1 = "АСТ";
         String pub2 = "Эксмо";
         String pub3 = "Питер";
         String pub4 = "Манн, Иванов";
         String pub5 = "Альпина";
 
-        // ISBN
         String isbn1 = "978-5-17-000000-0";
         String isbn2 = "978-5-699-234567-2";
         String isbn3 = "978-5-446-678901-6";
         String isbn4 = "978-5-001-012345-0";
-        String isbn5 = "0-306-40615-2"; // ISBN-10
+        String isbn5 = "0-306-40615-2";
 
-        // Года
         int year1 = 2001;
         int year2 = 2008;
         int year3 = 2015;
         int year4 = 2020;
         int year5 = 2024;
 
-        // Цены
         int price1 = 100;
         int price2 = 400;
         int price3 = 500;
         int price5 = 1000;
 
-        // 20 Книг
         Book b1  = new Book("Книга 01 — Тени истории",     pages1, au1, pub1, isbn1, year1, price1);
         Book b2  = new Book("Книга 02 — Ветер перемен",    pages2, au2, pub2, isbn2, year2, price2);
         Book b3  = new Book("Книга 03 — Ночная тропа",     pages3, au3, pub3, isbn3, year3, price3);
@@ -106,45 +99,35 @@ public class DemoShop {
                 au2.getSurname(), pub2, year2);
         System.out.println("Отфильтрованные книги по автору: " + au1 + "издателю: " + pub1 + " и году " + year1 + "\n" + filterBooksByAuthorAndPublisherAndYear + "\n");
 
-        // Добавляем юзера вручную
         User user1 = new User(1111111, "User 1 password");
         Users.addUser(user1);
 
-        // Проверяем что юзер существует в списке и если нет то записываем его в список
-//        System.out.println(Users.isUserInList(user1));
+        System.out.println(Users.isUserInList(user1));
 
-        // Создаем экземпляр класса логин
         Login login = new Login();
 
-        // Регистрируем второго юзера через логин
         User user2 = new User(22222222, "User 2 password");
         User user3 = new User(33333333, "User 3 password");
         login.register(user2);
         login.register(user3);
 
-//        System.out.println(Users.getAllUsers());
+        System.out.println(Users.getAllUsers());
 
-        // Проверяем что такой юзер зарегистрирован
         login.login(user2);
 
-        // Создаем корзину первого юзера и выводим юзера этой корзины
         Cart cart = new Cart(user1);
         System.out.println(cart.getUser());
 
-        // Создаем вторую корзину и выводим книги этого пользователя и стоимость 1 книги
         Cart cart2 = new Cart(user2, b1);
         System.out.println(cart2.getBooks());
         System.out.println("Стоимость всех книг юзера" + cart2.getTotalSum());
 
-        // Создаем 3 корзину и выводим сумму стоимости книг юзера где много книг
         Cart cart3 = new Cart(bookList,user3);
         System.out.println("Стоимость всех книг юзера" + cart3.getTotalSum());
 
-        // Добавим еще одну книгу во вторую корзину и выведем список книг
         cart2.addBook(b2);
         System.out.println("Список книг после добавления " + cart2.getBooks());
 
-        // Удалим 1 книгу в 3 корзине и выведем список книг после удаления
         cart3.deleteBook(b2);
         System.out.println("Список книг после удаления второй книги " + cart3.getBooks());
     }
