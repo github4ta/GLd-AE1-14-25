@@ -81,23 +81,25 @@ public class DemoShop {
         );
 
         List<Book> filterBooksByAuthor = Books.filterBooksByAuthor(bookList, au1.getSurname());
-        System.out.println("Отфильтрованные книги по автору: " + au1.getSurname() + "\n" + filterBooksByAuthor + "\n");
+        System.out.printf("Отфильтрованные книги по автору: %s \n %s", au1.getSurname(), filterBooksByAuthor);
 
         List<Book> filterBooksByPublisher = Books.filterBooksByPublisher(bookList, pub1);
-        System.out.println("Отфильтрованные книги по издателю: " + pub1 + "\n" + filterBooksByPublisher + "\n");
+        System.out.printf("Отфильтрованные книги по издателю: %s \n %s ", pub1, filterBooksByPublisher);
 
         List<Book> filterBooksByYear = Books.filterBooksByYear(bookList, year1);
-        System.out.println("Отфильтрованные книги по году выпуска: " + year1 + "\n" + filterBooksByYear + "\n");
+        System.out.printf("Отфильтрованные книги по %s году: \n %s", year1, filterBooksByYear);
 
         List<Book> filterBooksByIsbn = Books.filterBooksByIsbn(bookList, isbn1);
-        System.out.println("Отфильтрованные книги по ISBN: " + isbn1 + "\n" + filterBooksByIsbn + "\n");
+        System.out.printf("Отфильтрованные книги по ISBN: %s \n %s", isbn1, filterBooksByIsbn);
 
         List<Book> filterBooksByPublisherAndYear = Books.filterBooksByPublisherAndYear(bookList, pub1 , year1);
-        System.out.println("Отфильтрованные книги по издателю: " + pub1 + " и году " + year1 + "\n" + filterBooksByPublisherAndYear + "\n");
+        System.out.printf("Отфильтрованные книги по издателю %s и году %s: \n %s", pub1, year1,
+                filterBooksByPublisherAndYear);
 
         List<Book> filterBooksByAuthorAndPublisherAndYear = Books.filterBooksByAuthorAndPublisherAndYear(bookList,
                 au2.getSurname(), pub2, year2);
-        System.out.println("Отфильтрованные книги по автору: " + au1 + "издателю: " + pub1 + " и году " + year1 + "\n" + filterBooksByAuthorAndPublisherAndYear + "\n");
+        System.out.printf("Отфильтрованные книги по автору %s, издателю %s и году %s: \n %s",
+                au1, pub1, year1, filterBooksByAuthorAndPublisherAndYear);
 
         User user1 = new User(1111111, "User 1 password");
         Users.addUser(user1);
