@@ -1,5 +1,4 @@
 package by.it_academy.trofimova.by.booklover.catalog;
-
 import java.util.Objects;
 
 public class Book {

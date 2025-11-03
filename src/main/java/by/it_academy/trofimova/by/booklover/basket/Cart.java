@@ -1,8 +1,6 @@
 package by.it_academy.trofimova.by.booklover.basket;
-
 import by.it_academy.trofimova.by.booklover.catalog.Book;
 import by.it_academy.trofimova.by.booklover.login.User;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,22 +11,19 @@ public class Cart {
 
     public Cart(User user) {
         this.user = user;
+        this.books = new ArrayList<>();
     }
 
     public Cart(User user, Book book) {
         this.user = user;
         this.books = new ArrayList<>();
         this.books.add(book);
-        //создает экземпляр отдельной корзины для
-        //конкретного пользователя и добавляет в его корзину-список книгу
     }
 
     public Cart(User user, List<Book> books) {
         this.user = user;
         this.books = new ArrayList<>();
         this.books.addAll(books);
-        //создает экземпляр отдельной
-        //корзины для конкретного пользователя и добавляет в его корзину-список книги
     }
 
     public User getUser() {
@@ -36,11 +31,7 @@ public class Cart {
     }
 
     public int getTotalSum() {
-        int result = 0;
-        for (int i = 0; i < books.size(); i++) {
-            result += books.get(i).getPrice();
-        }
-        return result;
+        return books.stream().mapToInt(Book::getPrice).sum();
     }
 
     public List<Book> getBooks() {

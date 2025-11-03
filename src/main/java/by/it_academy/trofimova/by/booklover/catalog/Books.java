@@ -1,6 +1,4 @@
 package by.it_academy.trofimova.by.booklover.catalog;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class Books {

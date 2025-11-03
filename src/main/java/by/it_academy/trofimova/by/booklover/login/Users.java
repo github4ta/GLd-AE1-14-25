@@ -1,5 +1,4 @@
 package by.it_academy.trofimova.by.booklover.login;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,17 +14,17 @@ public class Users {
     }
 
     public static boolean isUserInList(User user) {
-        boolean flag = false;
+        boolean isUserInLis = false;
         for (int i = 0; i < users.size(); i++) {
             if (users.get(i).equals(user)) {
-                flag = true;
+                isUserInLis = true;
                 break;
             }
         }
-        if (!flag) {
+        if (!isUserInLis) {
             users.add(user);
         }
-        return flag;
+        return isUserInLis;
     }
 
 
