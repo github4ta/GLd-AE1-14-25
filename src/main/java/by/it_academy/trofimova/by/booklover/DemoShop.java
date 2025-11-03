@@ -1,4 +1,5 @@
 package by.it_academy.trofimova.by.booklover;
+
 import by.it_academy.trofimova.by.booklover.basket.Cart;
 import by.it_academy.trofimova.by.booklover.catalog.Author;
 import by.it_academy.trofimova.by.booklover.catalog.Book;
@@ -34,26 +35,52 @@ public class DemoShop {
         books.add(new Book("100 заданий для малыша. 0+", 11_99, author6, "978-5-17-153183-6",
                 "АСТ", 2023));
 
+        System.out.println("====Demo filter books====");
+        System.out.println(Books.filterBooksByAuthor(books, "Арден"));
+        System.out.println(Books.filterBooksByPublisher(books, "АСТ"));
+        System.out.println(Books.filterBooksByIsbn(books, "978-5-389-29466-0"));
+        System.out.println(Books.filterBooksByYear(books, 2025));
+        System.out.println(Books.filterBooksByPublisherAndYear(books,"Эксмо", 2025 ));
+        System.out.println(Books.filterBooksByAuthorAndPublisherAndYear(books, "Арден", "Эксмо", 2025));
+
+        System.out.println("====Demo users====");
         Users.addUser(new User(375336390468L, "123456789"));
         Users.addUser(new User(375294567123L, "1a2a3a4a5a"));
-        User user3 = new User(375446754819L, "qwerty");
-        Users.addUser(user3);
-        User user = new User(375299998877L, "345tre4");
+        User user = new User(375446754819L, "qwerty");
+        Users.addUser(user);
+
+        System.out.println(Users.getAllUsers());
+
+        User user1 = new User(375299998877L, "345tre4");
+        Users.isUserInList(user1);
+        System.out.println(Users.getAllUsers());
+
         User user2 = new User(375299678117L, "ffff");
-        Login.login(user3);
-        User user5 = new User(375112223344L, "qqq");
-        System.out.println("Demo Корзина");
+        Login.login(user2);
+        System.out.println(Users.getAllUsers());
+        Login.login(user);
+
+        User user3 = new User(375112223344L, "qqq");
+        Login.register(user3);
+        Login.register(user);
+        System.out.println(Users.getAllUsers());
+
+        System.out.println("====Demo basket====");
         Cart cart1 = new Cart(Users.getAllUsers().get(0));
         System.out.println(cart1);
+
         Cart cart2 = new Cart(Users.getAllUsers().get(1), books.get(3));
         System.out.println(cart2);
+
         Cart cart3 = new Cart(Users.getAllUsers().get(2), Books.filterBooksByAuthor(books, "Арден"));
         System.out.println(cart3);
         System.out.println(cart2.getUser());
         System.out.println(cart3.getTotalSum());
         System.out.println(cart2.getBooks());
+
         cart2.addBook(books.get(6));
         System.out.println(cart2.getBooks());
+
         cart3.deleteBook(books.get(0));
         System.out.println(cart3.getBooks());
     }

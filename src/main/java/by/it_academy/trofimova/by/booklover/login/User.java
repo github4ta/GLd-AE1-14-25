@@ -1,4 +1,5 @@
 package by.it_academy.trofimova.by.booklover.login;
+
 import java.util.Objects;
 
 public class User {

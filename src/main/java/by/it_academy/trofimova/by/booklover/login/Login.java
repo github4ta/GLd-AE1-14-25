@@ -3,7 +3,7 @@ package by.it_academy.trofimova.by.booklover.login;
 public class Login {
     public static void login(User user) {
         if (Users.isUserInList(user)) {
-            System.out.printf("Пользователь, %s", user.getNumberPhone());
+            System.out.printf("Пользователь, %s\n", user.getNumberPhone());
         } else {
             System.out.println("Вы не были зарегистрированы, мы вас зарегистрировали. Повторите вход.");
         }

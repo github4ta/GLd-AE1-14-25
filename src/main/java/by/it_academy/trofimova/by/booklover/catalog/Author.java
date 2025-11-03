@@ -1,4 +1,5 @@
 package by.it_academy.trofimova.by.booklover.catalog;
+
 import java.util.Objects;
 
 public class Author {
@@ -28,10 +29,7 @@ public class Author {
 
     @Override
     public String toString() {
-        return "Author{" +
-                "name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                '}';
+        return String.format("Author{name='%s', surname='%s'}", name, surname);
     }
 
     @Override

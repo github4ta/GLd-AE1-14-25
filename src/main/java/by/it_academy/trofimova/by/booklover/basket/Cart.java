@@ -1,6 +1,8 @@
 package by.it_academy.trofimova.by.booklover.basket;
+
 import by.it_academy.trofimova.by.booklover.catalog.Book;
 import by.it_academy.trofimova.by.booklover.login.User;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,11 +41,16 @@ public class Cart {
     }
 
     public void addBook(Book book) {
+        if (book == null) {
+            books = new ArrayList<>();
+        }
         books.add(book);
     }
 
     public void deleteBook(Book book) {
-        books.remove(book);
+        if (book != null) {
+            books.remove(book);
+        }
     }
 
     @Override
