@@ -84,18 +84,14 @@ public class Books {
     public static List<Book> filterBooksByAuthorAndPublisherAndYear(List<Book> books, String surname, String publisher,
                                                                     int year) {
 
-        List<Book> resultByAuthorAndPublisherAndYear = new ArrayList<>();
+        List<Book> result = new ArrayList<>(books);
 
-        for (Book currentBook : books) {
-            if(currentBook.getAuthor().getSurname() == surname &&
-                    currentBook.getPublisher() == publisher && currentBook.getYear() == year) {
-                resultByAuthorAndPublisherAndYear.add(currentBook);
-            }
-        }
+        result = filterBooksByAuthor(result, surname);
+        result = filterBooksByPublisher(result, publisher);
+        result = filterBooksByYear(result, year);
 
-        return resultByAuthorAndPublisherAndYear;
+        return result;
     }
-
 
 }
 
