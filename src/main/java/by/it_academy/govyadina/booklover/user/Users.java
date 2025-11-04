@@ -1,18 +1,16 @@
 package by.it_academy.govyadina.booklover.user;
 
-import by.booklover.User;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Users {
-   static List<by.booklover.User> users = new ArrayList<>();
+    public static List<User> users = new ArrayList<>();
 
-    public static void addUser(by.booklover.User user) {
+    public static void addUser(User user) {
         users.add(user);
     }
 
-    public static List<by.booklover.User> getAllUsers() {
+    public static List<User> getAllUsers() {
         return users;
     }
 
@@ -21,8 +19,8 @@ public class Users {
             if (users.get(i).equals(user)) {
                 return true;
             }
-            }
-                addUser(user);
-            return false;
+        }
+        addUser(user);
+        return false;
     }
 }
