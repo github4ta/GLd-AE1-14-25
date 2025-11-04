@@ -6,6 +6,14 @@ public class User {
     private String phoneNumber;
     private int password;
 
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public void setPassword(int password) {
+        this.password = password;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
