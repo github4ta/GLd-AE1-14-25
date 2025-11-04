@@ -34,4 +34,9 @@ public class Cart {
         this.user = user;
         this.books = new ArrayList<>();
     }
+
+    public Cart(User user, Book book) {
+        this(user);
+        this.books.add(book);
+    }
 }
