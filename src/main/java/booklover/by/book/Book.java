@@ -12,6 +12,15 @@ public class Book {
     private String isbn;
     private double price;
 
+    public Book(Author author, String title, int year, String publisher, String isbn, double price) {
+        this.author = author;
+        this.title = title;
+        this.year = year;
+        this.publisher = publisher;
+        this.isbn = isbn;
+        this.price = price;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
