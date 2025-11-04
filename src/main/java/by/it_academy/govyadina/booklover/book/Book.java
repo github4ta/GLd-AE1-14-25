@@ -1,6 +1,7 @@
 package by.it_academy.govyadina.booklover.book;
 
-import by.booklover.Author;
+
+import by.it_academy.govyadina.booklover.author.Author;
 
 import java.util.Objects;
 
