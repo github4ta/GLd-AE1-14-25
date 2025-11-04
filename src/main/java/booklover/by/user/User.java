@@ -1,5 +1,7 @@
 package booklover.by.user;
 
+import java.util.Objects;
+
 public class User {
     private String phoneNumber;
     private int password;
