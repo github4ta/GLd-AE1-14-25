@@ -29,10 +29,7 @@ public class Author {
 
     @Override
     public String toString() {
-        return "Author{" +
-                "surname='" + surname + '\'' +
-                ", name='" + name + '\'' +
-                '}';
+        return String.format("Author{surname='%s', name='%s'}", surname, name);
     }
 
     @Override
