@@ -1,14 +1,17 @@
 package by.it_academy.govyadina.booklover.cart;
 
-import by.booklover.Book;
-import by.booklover.User;
+
+
+import by.it_academy.govyadina.booklover.user.User;
+import by.it_academy.govyadina.booklover.book.Book;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+
 public class Cart {
-    private List<by.booklover.Book> books;
+    private List<Book> books;
     private User user;
 
     public Cart(User user) {
@@ -16,13 +19,13 @@ public class Cart {
         this.books = new ArrayList<>();
     }
 
-    public Cart(User user, by.booklover.Book book) {
+    public Cart(User user, Book book) {
         this.user = user;
         this.books = new ArrayList<>();
         this.books.add(book);
     }
 
-    public Cart(User user, List<by.booklover.Book> books) {
+    public Cart(User user, List<Book> books) {
         this.user = user;
         this.books = new ArrayList<>();
     }
@@ -31,7 +34,7 @@ public class Cart {
 
     }
 
-    public void setBooks(List<by.booklover.Book> books) {
+    public void setBooks(List<Book> books) {
         this.books = books;
     }
 
@@ -58,26 +61,21 @@ public class Cart {
     public int hashCode() {
         return Objects.hash(books, user);
     }
-
-
-
     public User getUser() {
         return user;
     }
 
     public int getTotalSum() {
         double booksSum = 0;
-        for (int i = 0; i < books.size(); i++) {
-            booksSum = booksSum + books.get(i).getPrice();
-        }
+        for (int i = 0; i < books.size(); i++) booksSum = booksSum + books.get(i).getPrice();
         return (int) booksSum;
     }
 
-    public List<by.booklover.Book> getBooks() {
+    public List<Book> getBooks() {
         return books;
     }
 
-    public void addBook(by.booklover.Book book) {
+    public void addBook(Book book) {
         if (books == null) {
             books = new ArrayList<>();
         }
@@ -90,4 +88,3 @@ public class Cart {
         }
     }
 }
-
