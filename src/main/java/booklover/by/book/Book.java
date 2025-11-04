@@ -2,6 +2,8 @@ package booklover.by.book;
 
 import booklover.by.author.Author;
 
+import java.util.Objects;
+
 public class Book {
     private Author author;
     private String title;
