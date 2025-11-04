@@ -10,6 +10,10 @@ public class Cart {
     private List<Book> books;
     private User user;
 
+    public Cart() {
+        this.books = new ArrayList<>();
+    }
+
     public List<Book> getBooks() {
         return books;
     }
