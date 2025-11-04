@@ -9,4 +9,15 @@ public class Book {
     private String publisher;
     private String isbn;
     private double price;
-}
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "author=" + author +
+                ", title='" + title + '\'' +
+                ", year=" + year +
+                ", publisher='" + publisher + '\'' +
+                ", isbn='" + isbn + '\'' +
+                ", price=" + price +
+                '}';
+    }}
