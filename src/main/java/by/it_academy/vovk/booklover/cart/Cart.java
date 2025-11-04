@@ -1,3 +1,8 @@
+package by.it_academy.vovk.booklover.cart;
+
+import by.it_academy.vovk.booklover.user.User;
+import by.it_academy.vovk.booklover.book.Book;
+
 import java.util.ArrayList;
 import java.util.List;
 

@@ -1,3 +1,7 @@
+package by.it_academy.vovk.booklover.book;
+
+import by.it_academy.vovk.booklover.author.Author;
+
 import java.util.Objects;
 
 public class Book {

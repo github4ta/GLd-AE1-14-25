@@ -1,6 +1,11 @@
+package by.it_academy.vovk.booklover.login;
+
+import by.it_academy.vovk.booklover.user.User;
+import by.it_academy.vovk.booklover.user.Users;
+
 public class Login {
     public static void Login(User user){
-        boolean exists  =Users.isUserInList(user);
+        boolean exists  = Users.isUserInList(user);
         if(exists){
             System.out.println("Пользователь," +  user.getPhoneNumber());
         }

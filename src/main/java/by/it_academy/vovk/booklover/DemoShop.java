@@ -1,3 +1,12 @@
+package by.it_academy.vovk.booklover;
+
+import by.it_academy.vovk.booklover.author.Author;
+import by.it_academy.vovk.booklover.book.Book;
+import by.it_academy.vovk.booklover.book.Books;
+import by.it_academy.vovk.booklover.cart.Cart;
+import by.it_academy.vovk.booklover.login.Login;
+import by.it_academy.vovk.booklover.user.User;
+
 import java.util.ArrayList;
 import java.util.List;
 

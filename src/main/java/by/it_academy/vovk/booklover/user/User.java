@@ -1,3 +1,5 @@
+package by.it_academy.vovk.booklover.user;
+
 import java.util.Objects;
 
 public class User {
