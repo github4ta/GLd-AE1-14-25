@@ -2,6 +2,8 @@ package booklover.by.book;
 
 import booklover.by.author.Author;
 
+import java.util.Objects;
+
 public class Book {
     private Author author;
     private String title;
@@ -22,7 +24,7 @@ public class Book {
     public int hashCode() {
         return Objects.hash(author, title, year, publisher, isbn, price);
     }
-}
+
 
     @Override
     public String toString() {
@@ -34,4 +36,5 @@ public class Book {
                 ", isbn='" + isbn + '\'' +
                 ", price=" + price +
                 '}';
-    }}
+    }
+}
