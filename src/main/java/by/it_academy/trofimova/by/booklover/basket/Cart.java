@@ -17,14 +17,12 @@ public class Cart {
     }
 
     public Cart(User user, Book book) {
-        this.user = user;
-        this.books = new ArrayList<>();
+        this(user);
         this.books.add(book);
     }
 
     public Cart(User user, List<Book> books) {
-        this.user = user;
-        this.books = new ArrayList<>();
+        this(user);
         this.books.addAll(books);
     }
 
@@ -41,16 +39,11 @@ public class Cart {
     }
 
     public void addBook(Book book) {
-        if (book == null) {
-            books = new ArrayList<>();
-        }
         books.add(book);
     }
 
     public void deleteBook(Book book) {
-        if (book != null) {
             books.remove(book);
-        }
     }
 
     @Override
