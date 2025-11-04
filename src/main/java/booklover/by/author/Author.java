@@ -38,4 +38,9 @@ public class Author {
     public int hashCode() {
         return Objects.hash(surname, name);
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s %s", name, surname);
+    }
 }
