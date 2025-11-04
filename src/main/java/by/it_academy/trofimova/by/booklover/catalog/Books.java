@@ -21,19 +21,11 @@ public class Books {
     }
 
     public static List<Book> filterBooksByPublisherAndYear(List<Book> books, String publisher, int year) {
-        List<Book> newListPublisher = filterBooksByPublisher(books, publisher);
-        List<Book> newListBooksByPublisherAndYear = filterBooksByYear(newListPublisher, year);
-
-        return newListBooksByPublisherAndYear;
+        return filterBooksByYear(filterBooksByPublisher(books, publisher), year);
     }
 
     public static List<Book> filterBooksByAuthorAndPublisherAndYear(List<Book> books, String authorSurname,
                                                                     String publisher, int year) {
-        List<Book> newListPublisherAndYear = filterBooksByPublisherAndYear(books, publisher, year);
-        List<Book> newListBooksByAuthorAndPublisherAndYear = filterBooksByAuthor(newListPublisherAndYear, authorSurname);
-        return newListBooksByAuthorAndPublisherAndYear;
+        return filterBooksByAuthor(filterBooksByPublisherAndYear(books, publisher, year), authorSurname);
     }
-
-
-
 }
