@@ -3,6 +3,7 @@ package booklover.by.cart;
 import booklover.by.book.Book;
 import booklover.by.user.User;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Cart {
@@ -23,5 +24,10 @@ public class Cart {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public Cart(User user) {
+        this.user = user;
+        this.books = new ArrayList<>();
     }
 }
