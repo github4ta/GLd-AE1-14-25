@@ -12,6 +12,15 @@ public class Book {
     private String isbn;
     private double price;
 
+    public Book(Author author, String title, int year, String publisher, String isbn, double price) {
+        this.author = author;
+        this.title = title;
+        this.year = year;
+        this.publisher = publisher;
+        this.isbn = isbn;
+        this.price = price;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -19,9 +28,43 @@ public class Book {
         Book book = (Book) o;
         return year == book.year && Double.compare(price, book.price) == 0 && Objects.equals(author, book.author) && Objects.equals(title, book.title) && Objects.equals(publisher, book.publisher) && Objects.equals(isbn, book.isbn);
     }
-
     @Override
     public int hashCode() {
         return Objects.hash(author, title, year, publisher, isbn, price);
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+    @Override
+    public String toString() {
+        return "Book{" +
+                "author=" + author +
+                ", title='" + title + '\'' +
+                ", year=" + year +
+                ", publisher='" + publisher + '\'' +
+                ", isbn='" + isbn + '\'' +
+                ", price=" + price +
+                '}';
     }
 }
