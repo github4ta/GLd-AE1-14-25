@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DemoShop {
-   public static void main() {
+   public static void main(String[] args) {
         Author author1 = new Author("Joan","Rouling");
         Author author2 = new Author("Ivan","Turgenev");
         Author author3 = new Author("Alexander","Duma");
