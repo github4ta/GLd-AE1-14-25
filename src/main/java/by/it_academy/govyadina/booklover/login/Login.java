@@ -1,9 +1,6 @@
-package by.it_academy.govyadina.booklover;
+package by.it_academy.govyadina.booklover.login;
 
 import by.booklover.User;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static by.booklover.Users.users;
 

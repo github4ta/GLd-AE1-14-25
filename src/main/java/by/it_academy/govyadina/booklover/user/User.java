@@ -1,4 +1,4 @@
-package by.it_academy.govyadina.booklover;
+package by.it_academy.govyadina.booklover.user;
 
 import java.util.Objects;
 
