@@ -1,14 +1,10 @@
 package by.it_academy.govyadina.booklover.cart;
 
-
-
 import by.it_academy.govyadina.booklover.user.User;
 import by.it_academy.govyadina.booklover.book.Book;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-
 
 public class Cart {
     private List<Book> books;
