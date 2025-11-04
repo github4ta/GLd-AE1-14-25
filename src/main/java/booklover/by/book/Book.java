@@ -12,6 +12,15 @@ public class Book {
     private String isbn;
     private double price;
 
+    public Book(Author author, String title, int year, String publisher, String isbn, double price) {
+        this.author = author;
+        this.title = title;
+        this.year = year;
+        this.publisher = publisher;
+        this.isbn = isbn;
+        this.price = price;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -19,9 +28,34 @@ public class Book {
         Book book = (Book) o;
         return year == book.year && Double.compare(price, book.price) == 0 && Objects.equals(author, book.author) && Objects.equals(title, book.title) && Objects.equals(publisher, book.publisher) && Objects.equals(isbn, book.isbn);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(author, title, year, publisher, isbn, price);
+    }
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public String getPublisher() {
+        return publisher;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public double getPrice() {
+        return price;
     }
 
     public void setAuthor(Author author) {
