@@ -10,6 +10,10 @@ public class Cart {
     private List<Book> books;
     private User user;
 
+    public Cart() {
+        this.books = new ArrayList<>();
+    }
+
     public List<Book> getBooks() {
         return books;
     }
@@ -29,5 +33,10 @@ public class Cart {
     public Cart(User user) {
         this.user = user;
         this.books = new ArrayList<>();
+    }
+
+    public Cart(User user, Book book) {
+        this(user);
+        this.books.add(book);
     }
 }
