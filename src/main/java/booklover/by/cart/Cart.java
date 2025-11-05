@@ -14,6 +14,12 @@ public class Cart {
         this.books = new ArrayList<>();
     }
 
+    public Cart(List<Book> books, User user) {
+        this.books = new ArrayList<>();
+        this.user = user;
+        this.books.addAll(books);
+    }
+
     public List<Book> getBooks() {
         return books;
     }
