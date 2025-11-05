@@ -9,7 +9,7 @@ public class Books {
         List<Book> filteredBooksResult = new ArrayList<>();
         for (int i = 0; i < books.size(); i++) {
             Book book = books.get(i);
-            if (books.get(i) != null && books.get(i).getAuthor().getSurname().equals(authorSurname) {
+            if (books.get(i).getAuthor().getSurname().equals(authorSurname)) {
                 filteredBooksResult.add(book);
             }
         }
