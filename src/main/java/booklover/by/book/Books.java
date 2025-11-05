@@ -6,14 +6,13 @@ import java.util.List;
 public class Books {
 
     public static List<Book> filterBooksByAuthor(List<Book> books, String authorSurname) {
-        List<Book> filteredBooks = new ArrayList<>();
-        for (int i = 0; i < filteredBooks.size(); i++) {
-            if (book.getAuthor() != null && authorSurname.equals(book.getAuthor().getSurname())) {
-                filteredBooks.add(book);
+        List<Book> filteredBooksResult = new ArrayList<>();
+        for (int i = 0; i < books.size(); i++) {
+            Book book = books.get(i);
+            if (books.get(i) != null && books.get(i).getAuthor().getSurname().equals(authorSurname) {
+                filteredBooksResult.add(book);
             }
-
         }
-        return filteredBooks;
-
+        return filteredBooksResult;
     }
 }
