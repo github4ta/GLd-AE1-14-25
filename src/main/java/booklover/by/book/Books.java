@@ -3,7 +3,6 @@ package booklover.by.book;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class Books {
 
     public static List<Book> filterBooksByPublisher(List<Book> books, String publisher) {
