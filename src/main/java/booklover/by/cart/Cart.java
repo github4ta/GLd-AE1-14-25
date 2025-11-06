@@ -45,4 +45,10 @@ public class Cart {
         this(user);
         this.books.add(book);
     }
+
+    public void addBook(Book book) {
+        if (book != null && !books.contains(book)) {
+            books.add(book);
+        }
+    }
 }
