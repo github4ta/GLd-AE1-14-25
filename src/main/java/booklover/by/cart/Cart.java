@@ -49,6 +49,8 @@ public class Cart {
     public void deleteBook(Book book) {
         if (book != null && books.contains(book)) {
             books.remove(book);
+        }
+    }
           
     public void addBook(Book book) {
         if (book != null && !books.contains(book)) {
