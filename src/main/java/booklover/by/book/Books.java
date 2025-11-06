@@ -27,4 +27,12 @@ public class Books {
                 .sorted(Comparator.comparing(Book::getPrice))
                 .collect(Collectors.toList());
     }
+
+    public static List<Book> filterBooksByAuthorAndPublisherAndYear(
+            List<Book> books, String authorSurname, String publisher, int year) {
+        return filterBooksByPublisherAndYear(books, publisher, year).stream()
+                .filter(book ->
+                        book.getAuthor().getSurname().equals(authorSurname))
+                .collect(Collectors.toList());
+    }
 }
