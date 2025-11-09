@@ -57,4 +57,8 @@ public class Cart {
             books.add(book);
         }
     }
+
+    public double getTotalSum() {
+        return books.stream().mapToDouble(Book::getPrice).sum();
+    }
 }
