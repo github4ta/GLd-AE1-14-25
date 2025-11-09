@@ -18,6 +18,15 @@ public class Books {
         return filtedBooksByPublisher;
     }
 
+    public static List<Book> filterBooksByYear(List<Book> books, int year) {
+        return books.stream()
+                .filter(book ->
+                        book.getYear() == year
+                )
+                .collect(Collectors.toList());
+    }
+
+
     public static List<Book> filterBooksByPublisherAndYear(List<Book> books, String publisher, int year) {
         return books.stream()
                 .filter(book ->
