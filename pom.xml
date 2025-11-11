@@ -8,4 +8,11 @@
     <artifactId>GLd-AE1-14-25</artifactId>
     <version>1.0.0</version>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.38.0</version>
+        </dependency>
+    </dependencies>
 </project>
