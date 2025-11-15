@@ -1,4 +1,4 @@
-package booklover.by.author;
+package by.booklover.author;
 
 import java.util.Objects;
 

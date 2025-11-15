@@ -1,7 +1,7 @@
-package booklover.by.cart;
+package by.booklover.cart;
 
-import booklover.by.book.Book;
-import booklover.by.user.User;
+import by.booklover.book.Book;
+import by.booklover.user.User;
 
 import java.util.ArrayList;
 import java.util.List;
