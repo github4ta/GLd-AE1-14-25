@@ -1,4 +1,4 @@
 package by.booklover;
 
-public class AnyTest {
+public class HomeTest {
 }
