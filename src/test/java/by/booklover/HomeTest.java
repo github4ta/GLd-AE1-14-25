@@ -16,7 +16,9 @@ public class HomeTest {
     private final String COOKIE_ALERT_CLOSE = "//span[@id='js-cookie-alert-close']";
 
     private WebDriver driver;
+
     // продолжаем добавлять ваши XPath'ы для веб-элементов
+    private String deliveryUrl = "//li[@class='nav__item']/a[@href='/delivery/']";
 
     @BeforeEach
     public void setupDriverAndOpenHomePageAndCloseCookieAlert() {
@@ -40,6 +42,12 @@ public class HomeTest {
         String expectedText = "Программа лояльности";
         String actualText = loyaltyProgramButton.getText();
         Assertions.assertEquals(expectedText, actualText);
+    }
+
+    @Test
+    public void testDelivery() {
+        WebElement elementDelivery = driver.findElement(By.xpath(deliveryUrl));
+        Assertions.assertEquals("Доставка", elementDelivery.getText());
     }
 
     @AfterEach
