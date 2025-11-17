@@ -1,5 +1,6 @@
 package by.booklover;
 
+import by.booklover.utils.Waits;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -32,6 +33,15 @@ public class HomeTest {
     public void testBasket() {
         WebElement elementBasket = driver.findElement(By.xpath("//span[@class='user-link__text']"));
         Assertions.assertEquals("Корзина", elementBasket.getText());
+    }
+
+    @Test
+    public void testSearchString(){
+        WebElement searchForm = driver.findElement(By.xpath("//form[@class='header__search-form']"));
+        String textInSearch = "//input[@id='search']";
+        Assertions.assertTrue(driver.findElement(By.xpath(textInSearch)).isDisplayed());
+        String getAttribute = driver.findElement(By.xpath(textInSearch)).getAttribute("placeholder");
+        Assertions.assertEquals("Поиск среди 290 000 книг, введите автора, название, isbn, серию или другое...",getAttribute);
     }
 
     @AfterEach
