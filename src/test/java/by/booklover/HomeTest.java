@@ -1,9 +1,12 @@
 package by.booklover;
 
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class HomeTest {
@@ -11,9 +14,11 @@ public class HomeTest {
     private final String BASE_URL = "https://booklover.by/";
 
     private final String COOKIE_ALERT_CLOSE = "//span[@id='js-cookie-alert-close']";
-    // продолжаем добавлять ваши XPath'ы для веб-элементов
 
     private WebDriver driver;
+    // продолжаем добавлять ваши XPath'ы для веб-элементов
+
+    WebElement elementBasket = driver.findElement(By.xpath("//span[@class='user-link_text']"));
 
     @BeforeEach
     public void setupDriverAndOpenHomePageAndCloseCookieAlert() {
@@ -25,7 +30,10 @@ public class HomeTest {
     }
 
     // продолжаем добавлять ваши тестовые методы
-
+    @Test
+    public void testBasket() {
+        Assertions.assertEquals("Корзина", elementBasket.getText());
+    }
 
     @AfterEach
     public void quitDriver() {
