@@ -37,6 +37,14 @@ public class HomeTest {
     }
 
     @Test
+    public void testLoyaltyProgramButton() {
+        WebElement loyaltyProgramButton = driver.findElement(By.xpath("//div[@class='header__wrapper header__wrapper--top']/nav/ul/li[4]/a"));
+        String expectedText = "Программа лояльности";
+        String actualText = loyaltyProgramButton.getText();
+        Assertions.assertEquals(expectedText, actualText);
+    }
+
+    @Test
     public void testDelivery() {
         WebElement element = driver.findElement(By.xpath(deliveryUrl));
         Assertions.assertEquals("Доставка", element.getText());
