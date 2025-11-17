@@ -37,9 +37,9 @@ public class HomeTest {
     }
 
     @Test
-    public void testDelivery(){
+    public void testDelivery() {
         WebElement element = driver.findElement(By.xpath(deliveryUrl));
-        Assertions.assertEquals("Доставка",element.getText());
+        Assertions.assertEquals("Доставка", element.getText());
     }
 
     @AfterEach
