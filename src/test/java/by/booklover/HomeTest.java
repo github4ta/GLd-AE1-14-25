@@ -50,6 +50,15 @@ public class HomeTest {
         Assertions.assertEquals("Доставка", elementDelivery.getText());
     }
 
+    @Test
+    public void testVerifyContactOperatorsAndPhone() {
+        WebElement elementTopPhoneOperator = driver.findElement(By.xpath("//p[@class='header__top-phone-operator']"));
+        WebElement elementTopPhoneNumber = driver.findElement(By.xpath("//p[@class='header__top-phone-number']"));
+
+        Assertions.assertEquals("МТС, A1, Life", elementTopPhoneOperator.getText());
+        Assertions.assertEquals("778-22-55", elementTopPhoneNumber.getText());
+    }
+
     @AfterEach
     public void quitDriver() {
         driver.quit();
