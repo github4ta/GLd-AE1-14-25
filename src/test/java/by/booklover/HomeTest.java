@@ -18,8 +18,6 @@ public class HomeTest {
     private WebDriver driver;
     // продолжаем добавлять ваши XPath'ы для веб-элементов
 
-    WebElement elementBasket = driver.findElement(By.xpath("//span[@class='user-link_text']"));
-
     @BeforeEach
     public void setupDriverAndOpenHomePageAndCloseCookieAlert() {
         driver = new ChromeDriver();
@@ -32,6 +30,7 @@ public class HomeTest {
     // продолжаем добавлять ваши тестовые методы
     @Test
     public void testBasket() {
+        WebElement elementBasket = driver.findElement(By.xpath("//span[@class='user-link__text']"));
         Assertions.assertEquals("Корзина", elementBasket.getText());
     }
 
