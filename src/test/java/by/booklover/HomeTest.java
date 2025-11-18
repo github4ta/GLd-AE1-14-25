@@ -59,6 +59,13 @@ public class HomeTest {
         Assertions.assertEquals("778-22-55", elementTopPhoneNumber.getText());
     }
 
+    @Test
+    public void testPayment() {
+        WebElement elementPayment = driver.findElement((By.xpath("//li[@class='nav__item']/a[@href='/payment/']")));
+
+        Assertions.assertEquals("Оплата", elementPayment.getText());
+    }
+
     @AfterEach
     public void quitDriver() {
         driver.quit();
