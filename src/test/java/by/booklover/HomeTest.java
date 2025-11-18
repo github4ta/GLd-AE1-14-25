@@ -14,6 +14,7 @@ public class HomeTest {
     private final String BASE_URL = "https://booklover.by/";
 
     private final String COOKIE_ALERT_CLOSE = "//span[@id='js-cookie-alert-close']";
+    private final String LOYALTY_PROGRAM_BUTTON = "//div[@class='header__wrapper header__wrapper--top']/nav/ul/li[4]/a";
 
     private WebDriver driver;
 
@@ -40,7 +41,7 @@ public class HomeTest {
 
     @Test
     public void testLoyaltyProgramButton() {
-        WebElement loyaltyProgramButton = driver.findElement(By.xpath("//div[@class='header__wrapper header__wrapper--top']/nav/ul/li[4]/a"));
+        WebElement loyaltyProgramButton = driver.findElement(By.xpath(LOYALTY_PROGRAM_BUTTON));
         String expectedText = "Программа лояльности";
         String actualText = loyaltyProgramButton.getText();
         Assertions.assertEquals(expectedText, actualText);
