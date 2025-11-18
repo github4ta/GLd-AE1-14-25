@@ -19,6 +19,8 @@ public class HomeTest {
 
     // продолжаем добавлять ваши XPath'ы для веб-элементов
     private String deliveryUrl = "//li[@class='nav__item']/a[@href='/delivery/']";
+    private String forOrganizationsUrl = "//li[@class='nav__item']/a[@href='/our-clients/']";
+    private String contactsUrl = "//li[@class='nav__item']/a[@href='/contacts/']";
 
     @BeforeEach
     public void setupDriverAndOpenHomePageAndCloseCookieAlert() {
@@ -48,6 +50,18 @@ public class HomeTest {
     public void testDelivery() {
         WebElement elementDelivery = driver.findElement(By.xpath(deliveryUrl));
         Assertions.assertEquals("Доставка", elementDelivery.getText());
+    }
+
+    @Test
+    public void testForOrganizations() {
+        WebElement elementForOrganizations = driver.findElement(By.xpath(forOrganizationsUrl));
+        Assertions.assertEquals("Для организаций", elementForOrganizations.getText());
+    }
+
+    @Test
+    public void testContacts() {
+        WebElement elementContacts = driver.findElement(By.xpath(contactsUrl));
+        Assertions.assertEquals("Контакты", elementContacts.getText());
     }
 
     @Test
