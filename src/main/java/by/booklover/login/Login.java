@@ -1,4 +1,4 @@
-package booklover.by.login;
+package by.booklover.login;
 
 public class Login {
     }
