@@ -12,9 +12,15 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class HomeTest {
 
     private final String BASE_URL = "https://booklover.by/";
+    private final String ADDRESS = "ТЦ Купаловский, павильон 10";
+    private final String TIMEWORK = "Пн-сб 11:00-19:00";
 
     private final String COOKIE_ALERT_CLOSE = "//span[@id='js-cookie-alert-close']";
     private final String LOYALTY_PROGRAM_BUTTON = "//div[@class='header__wrapper header__wrapper--top']/nav/ul/li[4]/a";
+    private final By HEADER_TOP_INFO_ADDRESS_LINE = By.xpath("//div[@class='header__top-info']/p[1]");
+    private final By HEADER_TOP_INFO_TIME_LINE = By.xpath("//div[@class='header__top-info']/p[2]");
+    private final By PIN_ICON = By.xpath("//div[contains(@class,'header__top-info')]//*[local-name() = 'use' and contains(@*[local-name() = 'href'], 'pin-icon')]");
+    private final By TIME_ICON = By.xpath("//div[contains(@class,'header__top-info')]//*[local-name() = 'use' and contains(@*[local-name() = 'href'], 'time-icon')]");
 
     private WebDriver driver;
 
@@ -72,6 +78,17 @@ public class HomeTest {
 
         Assertions.assertEquals("МТС, A1, Life", elementTopPhoneOperator.getText());
         Assertions.assertEquals("778-22-55", elementTopPhoneNumber.getText());
+    }
+
+    @Test
+    public void verifyAddressAndWorkTimeAreDisplayed() {
+        String address = driver.findElement(HEADER_TOP_INFO_ADDRESS_LINE).getText();
+        String time = driver.findElement(HEADER_TOP_INFO_TIME_LINE).getText();
+
+        Assertions.assertEquals(ADDRESS, address, "Wrong address is displayed in header");
+        Assertions.assertEquals(TIMEWORK, time, "Wrong work hours are displayed in header");
+        Assertions.assertTrue(driver.findElement(PIN_ICON).isDisplayed(), "Pin icon for address in header is not displayed");
+        Assertions.assertTrue(driver.findElement(TIME_ICON).isDisplayed(), "Time icon for work hours in header is not displayed");
     }
 
     @AfterEach
