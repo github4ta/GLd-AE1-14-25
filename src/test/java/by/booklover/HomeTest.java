@@ -21,6 +21,7 @@ public class HomeTest {
     private final By HEADER_TOP_INFO_TIME_LINE = By.xpath("//div[@class='header__top-info']/p[2]");
     private final By PIN_ICON = By.xpath("//div[contains(@class,'header__top-info')]//*[local-name() = 'use' and contains(@*[local-name() = 'href'], 'pin-icon')]");
     private final By TIME_ICON = By.xpath("//div[contains(@class,'header__top-info')]//*[local-name() = 'use' and contains(@*[local-name() = 'href'], 'time-icon')]");
+    private final By HEADER_TOP_NAV_ORDER_ITEM = By.xpath("//nav[@class='header__nav nav']//a[@href='/order/']");
 
     private WebDriver driver;
 
@@ -43,6 +44,12 @@ public class HomeTest {
     public void testBasket() {
         WebElement elementBasket = driver.findElement(By.xpath("//span[@class='user-link__text']"));
         Assertions.assertEquals("Корзина", elementBasket.getText());
+    }
+
+    @Test
+    public void verifyOrderItemTextInHeaderNav() {
+        WebElement elementOrder = driver.findElement(HEADER_TOP_NAV_ORDER_ITEM);
+        Assertions.assertEquals("Заказ", elementOrder.getText());
     }
 
     @Test
