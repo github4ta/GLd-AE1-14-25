@@ -90,6 +90,11 @@ public class HomeTest {
         Assertions.assertTrue(driver.findElement(PIN_ICON).isDisplayed(), "Pin icon for address in header is not displayed");
         Assertions.assertTrue(driver.findElement(TIME_ICON).isDisplayed(), "Time icon for work hours in header is not displayed");
     }
+    @Test
+    public void testElementAccountButton (){
+        WebElement elementAccountButton = driver.findElement(By.xpath("//a[@class='header__user-link user-link user-link--account']"));
+        Assertions.assertEquals("Кабинет",elementAccountButton.getText());
+    }
 
     @AfterEach
     public void quitDriver() {
