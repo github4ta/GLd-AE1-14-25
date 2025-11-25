@@ -29,6 +29,7 @@ public class HomeTest {
     private String deliveryUrl = "//li[@class='nav__item']/a[@href='/delivery/']";
     private String forOrganizationsUrl = "//li[@class='nav__item']/a[@href='/our-clients/']";
     private String contactsUrl = "//li[@class='nav__item']/a[@href='/contacts/']";
+    private String forAccountButton = "//a[@class='header__user-link user-link user-link--account']";
 
     @BeforeEach
     public void setupDriverAndOpenHomePageAndCloseCookieAlert() {
@@ -96,6 +97,11 @@ public class HomeTest {
         Assertions.assertEquals(TIMEWORK, time, "Wrong work hours are displayed in header");
         Assertions.assertTrue(driver.findElement(PIN_ICON).isDisplayed(), "Pin icon for address in header is not displayed");
         Assertions.assertTrue(driver.findElement(TIME_ICON).isDisplayed(), "Time icon for work hours in header is not displayed");
+    }
+    @Test
+    public void testElementAccountButton (){
+        WebElement elementAccountButton = driver.findElement(By.xpath(forAccountButton));
+        Assertions.assertEquals("Кабинет",elementAccountButton.getText());
     }
 
     @AfterEach
