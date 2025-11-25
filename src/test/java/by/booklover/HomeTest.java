@@ -28,6 +28,7 @@ public class HomeTest {
     private String deliveryUrl = "//li[@class='nav__item']/a[@href='/delivery/']";
     private String forOrganizationsUrl = "//li[@class='nav__item']/a[@href='/our-clients/']";
     private String contactsUrl = "//li[@class='nav__item']/a[@href='/contacts/']";
+    private String forAccountButton = "//a[@class='header__user-link user-link user-link--account']";
 
     @BeforeEach
     public void setupDriverAndOpenHomePageAndCloseCookieAlert() {
@@ -92,7 +93,7 @@ public class HomeTest {
     }
     @Test
     public void testElementAccountButton (){
-        WebElement elementAccountButton = driver.findElement(By.xpath("//a[@class='header__user-link user-link user-link--account']"));
+        WebElement elementAccountButton = driver.findElement(By.xpath(forAccountButton));
         Assertions.assertEquals("Кабинет",elementAccountButton.getText());
     }
 
