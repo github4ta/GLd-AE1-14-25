@@ -30,6 +30,7 @@ public class HomeTest {
     private String forOrganizationsUrl = "//li[@class='nav__item']/a[@href='/our-clients/']";
     private String contactsUrl = "//li[@class='nav__item']/a[@href='/contacts/']";
     private String forAccountButton = "//a[@class='header__user-link user-link user-link--account']";
+    private String paymentUrl = "//li[@class='nav__item']/a[@href='/payment/']";
 
     @BeforeEach
     public void setupDriverAndOpenHomePageAndCloseCookieAlert() {
@@ -106,8 +107,7 @@ public class HomeTest {
 
     @Test
     public void testPayment() {
-        WebElement elementPayment = driver.findElement((By.xpath("//li[@class='nav__item']/a[@href='/payment/']")));
-
+        WebElement elementPayment = driver.findElement((By.xpath(paymentUrl)));
         Assertions.assertEquals("Оплата", elementPayment.getText());
     }
 
