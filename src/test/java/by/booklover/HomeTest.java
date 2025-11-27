@@ -70,14 +70,12 @@ public class HomeTest {
 
     @Test
     public void testElementAccountButton (){
-        WebElement elementAccountButton = driver.findElement(By.xpath(forAccountButton));
-        Assertions.assertEquals("Кабинет",elementAccountButton.getText());
+        Assertions.assertEquals("Кабинет",homePage.getForAccountButtonText());
     }
 
     @Test
     public void testPayment() {
-        WebElement elementPayment = driver.findElement((By.xpath(paymentUrl)));
-        Assertions.assertEquals("Оплата", elementPayment.getText());
+        Assertions.assertEquals("Оплата", homePage.getPaymentUrlText());
     }
 
     @AfterEach
