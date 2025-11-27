@@ -62,4 +62,20 @@ public class HomePage {
         return driver.findElement(PHONE_NUMBER).getText();
     }
 
+    public String getheaderTopInfoAddressLineText() {
+        return driver.findElement(HEADER_TOP_INFO_ADDRESS_LINE).getText();
+    }
+
+    public String getheaderTopInfoTimeLineText() {
+        return driver.findElement(HEADER_TOP_INFO_TIME_LINE).getText();
+    }
+
+    public boolean isPinIconDisplayed() {
+        return driver.findElement(PIN_ICON).isDisplayed();
+    }
+
+    public boolean isTimeIconDisplayed() {
+        return driver.findElement(TIME_ICON).isDisplayed();
+    }
+
 }
