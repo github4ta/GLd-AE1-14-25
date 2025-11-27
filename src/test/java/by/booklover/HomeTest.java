@@ -33,12 +33,12 @@ public class HomeTest {
 
     @Test
     public void testLoyaltyProgramButton() {
-        Assertions.assertEquals("Программа лояльности", homePage.getLoyaltyProgramButton());
+        Assertions.assertEquals(homePage.LOYALTY_PROGRAM_LABEL, homePage.getLoyaltyProgramButton());
     }
 
     @Test
     public void testDelivery() {
-        Assertions.assertEquals("Доставка", homePage.getDeliveryUrlText());
+        Assertions.assertEquals(homePage.DELIVERY_LABLE, homePage.getDeliveryUrlText());
     }
 
     @Test
