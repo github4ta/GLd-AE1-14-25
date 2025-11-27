@@ -23,12 +23,12 @@ public class HomeTest {
 
     @Test
     public void testBasket() {
-        Assertions.assertEquals("Корзина", homePage.getBasketButtonText());
+        Assertions.assertEquals(homePage.BASKET_LABEL, homePage.getBasketButtonText());
     }
 
     @Test
     public void verifyOrderItemTextInHeaderNav() {
-        Assertions.assertEquals("Заказ", homePage.getHragerTopNavOrderItem());
+        Assertions.assertEquals(homePage.ORDER_LABEL, homePage.getHragerTopNavOrderItem());
     }
 
     @Test

@@ -9,6 +9,8 @@ public class HomePage {
 
     public final String ADDRESS = "ТЦ Купаловский, павильон 10";
     public final String TIMEWORK = "Пн-сб 11:00-19:00";
+    public final String BASKET_LABEL = "Корзина";
+    public final String ORDER_LABEL = "Заказ";
 
     private final By HEADER_TOP_INFO_ADDRESS_LINE = By.xpath("//div[@class='header__top-info']/p[1]");
     private final By HEADER_TOP_INFO_TIME_LINE = By.xpath("//div[@class='header__top-info']/p[2]");
