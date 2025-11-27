@@ -30,6 +30,10 @@ public class HomePage {
 
     private WebDriver driver;
 
+    public void open() {
+        driver.get(BASE_URL);
+    }
+
     public String getBasketButtonText() {
         return driver.findElement(BACKET_BUTTON).getText();
     }
@@ -85,5 +89,4 @@ public class HomePage {
     public String getPaymentUrlText() {
         return driver.findElement(By.xpath(paymentUrl)).getText();
     }
-
 }
