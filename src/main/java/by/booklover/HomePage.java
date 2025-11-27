@@ -6,8 +6,8 @@ import org.openqa.selenium.WebDriver;
 public class HomePage {
 
     private final String BASE_URL = "https://booklover.by/";
-    private final String ADDRESS = "ТЦ Купаловский, павильон 10";
-    private final String TIMEWORK = "Пн-сб 11:00-19:00";
+    public final String ADDRESS = "ТЦ Купаловский, павильон 10";
+    public final String TIMEWORK = "Пн-сб 11:00-19:00";
 
     private final String COOKIE_ALERT_CLOSE = "//span[@id='js-cookie-alert-close']";
     private final String LOYALTY_PROGRAM_BUTTON = "//div[@class='header__wrapper header__wrapper--top']/nav/ul/li[4]/a";
