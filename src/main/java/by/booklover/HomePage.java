@@ -100,7 +100,7 @@ public class HomePage {
     }
 
     public String getForAccountButtonText() {
-        return driver.findElement(By.xpath(FOR_ACCOUNT_BUTTON_LABEL)).getText();
+        return driver.findElement(By.xpath(forAccountButton)).getText();
     }
 
     public String getPaymentUrlText() {
