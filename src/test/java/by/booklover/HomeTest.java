@@ -43,12 +43,12 @@ public class HomeTest {
 
     @Test
     public void testForOrganizations() {
-        Assertions.assertEquals("Для организаций", homePage.getForOrganizationsUrlText());
+        Assertions.assertEquals(homePage.FOR_ORGANISATION_URL_LABEL, homePage.getForOrganizationsUrlText());
     }
 
     @Test
     public void testContacts() {
-        Assertions.assertEquals("Контакты", homePage.getContactText());
+        Assertions.assertEquals(homePage.CONTACTS_URL_LABEL, homePage.getContactText());
     }
 
     @Test

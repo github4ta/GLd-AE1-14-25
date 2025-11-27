@@ -13,6 +13,8 @@ public class HomePage {
     public final String ORDER_LABEL = "Заказ";
     public final String LOYALTY_PROGRAM_LABEL = "Программа лояльности";
     public final String DELIVERY_LABLE = "Доставка";
+    public final String FOR_ORGANISATION_URL_LABEL = "Для организаций";
+    public final String CONTACTS_URL_LABEL = "Контакты";
 
     private final By HEADER_TOP_INFO_ADDRESS_LINE = By.xpath("//div[@class='header__top-info']/p[1]");
     private final By HEADER_TOP_INFO_TIME_LINE = By.xpath("//div[@class='header__top-info']/p[2]");
