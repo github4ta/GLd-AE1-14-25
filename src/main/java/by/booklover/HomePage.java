@@ -34,4 +34,8 @@ public class HomePage {
         return driver.findElement(HEADER_TOP_NAV_ORDER_ITEM).getText();
     }
 
+    public String getLoyaltyProgramButtonText(){
+        return driver.findElement(By.xpath(LOYALTY_PROGRAM_BUTTON)).getText();
+    }
+
 }
