@@ -78,4 +78,12 @@ public class HomePage {
         return driver.findElement(TIME_ICON).isDisplayed();
     }
 
+    public String getForAccountButtonText() {
+        return driver.findElement(By.xpath(forAccountButton)).getText();
+    }
+
+    public String getPaymentUrlText() {
+        return driver.findElement(By.xpath(paymentUrl)).getText();
+    }
+
 }
