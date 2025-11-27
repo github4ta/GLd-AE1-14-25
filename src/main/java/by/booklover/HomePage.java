@@ -38,4 +38,7 @@ public class HomePage {
         return driver.findElement(By.xpath(LOYALTY_PROGRAM_BUTTON)).getText();
     }
 
+    public String getDeliveryUrlText() {
+        return driver.findElement(By.xpath(deliveryUrl)).getText();
+    }
 }
