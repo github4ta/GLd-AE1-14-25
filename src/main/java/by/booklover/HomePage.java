@@ -15,6 +15,8 @@ public class HomePage {
     public final String DELIVERY_LABLE = "Доставка";
     public final String FOR_ORGANISATION_URL_LABEL = "Для организаций";
     public final String CONTACTS_URL_LABEL = "Контакты";
+    public final String PHONE_OPERATOR_LABEL = "МТС, A1, Life";
+    public final String PHONE_NUMBER_LABEL = "778-22-55";
 
     private final By HEADER_TOP_INFO_ADDRESS_LINE = By.xpath("//div[@class='header__top-info']/p[1]");
     private final By HEADER_TOP_INFO_TIME_LINE = By.xpath("//div[@class='header__top-info']/p[2]");

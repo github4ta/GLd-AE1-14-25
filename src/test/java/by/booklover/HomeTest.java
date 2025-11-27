@@ -53,8 +53,8 @@ public class HomeTest {
 
     @Test
     public void testVerifyContactOperatorsAndPhone() {
-        Assertions.assertEquals("МТС, A1, Life", homePage.getPhoneOperatotText());
-        Assertions.assertEquals("778-22-55", homePage.getPhoneNumberText());
+        Assertions.assertEquals(homePage.PHONE_OPERATOR_LABEL, homePage.getPhoneOperatotText());
+        Assertions.assertEquals(homePage.PHONE_NUMBER_LABEL, homePage.getPhoneNumberText());
     }
 
     @Test
