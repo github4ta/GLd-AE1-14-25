@@ -51,17 +51,13 @@ public class HomeTest {
 
     @Test
     public void testContacts() {
-        WebElement elementContacts = driver.findElement(By.xpath(contactsUrl));
-        Assertions.assertEquals("Контакты", elementContacts.getText());
+        Assertions.assertEquals("Контакты", homePage.getContactText());
     }
 
     @Test
     public void testVerifyContactOperatorsAndPhone() {
-        WebElement elementTopPhoneOperator = driver.findElement(By.xpath("//p[@class='header__top-phone-operator']"));
-        WebElement elementTopPhoneNumber = driver.findElement(By.xpath("//p[@class='header__top-phone-number']"));
-
-        Assertions.assertEquals("МТС, A1, Life", elementTopPhoneOperator.getText());
-        Assertions.assertEquals("778-22-55", elementTopPhoneNumber.getText());
+        Assertions.assertEquals("МТС, A1, Life", homePage.getPhoneOperatotText());
+        Assertions.assertEquals("778-22-55", homePage.getPhoneNumberText());
     }
 
     @Test
