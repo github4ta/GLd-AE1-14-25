@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class HomePage {
+
+
     private final String BASE_URL = "https://booklover.by/";
     private final String ADDRESS = "ТЦ Купаловский, павильон 10";
     private final String TIMEWORK = "Пн-сб 11:00-19:00";
@@ -15,7 +17,7 @@ public class HomePage {
     private final By PIN_ICON = By.xpath("//div[contains(@class,'header__top-info')]//*[local-name() = 'use' and contains(@*[local-name() = 'href'], 'pin-icon')]");
     private final By TIME_ICON = By.xpath("//div[contains(@class,'header__top-info')]//*[local-name() = 'use' and contains(@*[local-name() = 'href'], 'time-icon')]");
     private final By HEADER_TOP_NAV_ORDER_ITEM = By.xpath("//nav[@class='header__nav nav']//a[@href='/order/']");
-    private final By BASKET_BUTTON = By.xpath("//span[@class='user-link__text']");
+    private final By BACKET_BUTTON = By.xpath("//span[@class='user-link__text']");
 
     // продолжаем добавлять ваши XPath'ы для веб-элементов
     private String deliveryUrl = "//li[@class='nav__item']/a[@href='/delivery/']";
@@ -26,19 +28,23 @@ public class HomePage {
 
     private WebDriver driver;
 
-    public String getBasketButtonText(){
-        return driver.findElement(BASKET_BUTTON).getText();
+    public String getBasketButtonText() {
+        return driver.findElement(BACKET_BUTTON).getText();
     }
 
-    public String getHeaderTopNavOrderItem() {
+    public String getHragerTopNavOrderItem() {
         return driver.findElement(HEADER_TOP_NAV_ORDER_ITEM).getText();
     }
 
-    public String getLoyaltyProgramButtonText(){
+    public String getLoyaltyProgramButton() {
         return driver.findElement(By.xpath(LOYALTY_PROGRAM_BUTTON)).getText();
     }
 
-    public String getDeliveryUrlText() {
+    public String getDeliveryUrlText(){
         return driver.findElement(By.xpath(deliveryUrl)).getText();
+    }
+
+    public String getForOrganizationsUrlText() {
+        return driver.findElement(By.xpath(forOrganizationsUrl)).getText();
     }
 }
