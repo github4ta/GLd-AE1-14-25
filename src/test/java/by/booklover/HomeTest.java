@@ -67,12 +67,12 @@ public class HomeTest {
 
     @Test
     public void testElementAccountButton (){
-        Assertions.assertEquals("Кабинет",homePage.getForAccountButtonText());
+        Assertions.assertEquals(homePage.FOR_ACCOUNT_BUTTON_LABEL, homePage.getForAccountButtonText());
     }
 
     @Test
     public void testPayment() {
-        Assertions.assertEquals("Оплата", homePage.getPaymentUrlText());
+        Assertions.assertEquals(homePage.PAYMENT_URL_LABEL, homePage.getPaymentUrlText());
     }
 
     @AfterEach

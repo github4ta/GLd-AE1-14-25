@@ -17,6 +17,8 @@ public class HomePage {
     public final String CONTACTS_URL_LABEL = "Контакты";
     public final String PHONE_OPERATOR_LABEL = "МТС, A1, Life";
     public final String PHONE_NUMBER_LABEL = "778-22-55";
+    public final String FOR_ACCOUNT_BUTTON_LABEL = "Кабинет";
+    public final String PAYMENT_URL_LABEL = "Оплата";
 
     private final By HEADER_TOP_INFO_ADDRESS_LINE = By.xpath("//div[@class='header__top-info']/p[1]");
     private final By HEADER_TOP_INFO_TIME_LINE = By.xpath("//div[@class='header__top-info']/p[2]");
@@ -98,7 +100,7 @@ public class HomePage {
     }
 
     public String getForAccountButtonText() {
-        return driver.findElement(By.xpath(forAccountButton)).getText();
+        return driver.findElement(By.xpath(FOR_ACCOUNT_BUTTON_LABEL)).getText();
     }
 
     public String getPaymentUrlText() {
