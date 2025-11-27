@@ -25,6 +25,8 @@ public class HomePage {
     private String contactsUrl = "//li[@class='nav__item']/a[@href='/contacts/']";
     private String forAccountButton = "//a[@class='header__user-link user-link user-link--account']";
     private String paymentUrl = "//li[@class='nav__item']/a[@href='/payment/']";
+    private final By PHONE_OPERATOR = By.xpath("//p[@class='header__top-phone-operator']");
+    private final By PHONE_NUMBER = By.xpath("//p[@class='header__top-phone-number']");
 
     private WebDriver driver;
 
@@ -47,4 +49,17 @@ public class HomePage {
     public String getForOrganizationsUrlText() {
         return driver.findElement(By.xpath(forOrganizationsUrl)).getText();
     }
+
+    public String getContactText(){
+        return driver.findElement(By.xpath(contactsUrl)).getText();
+    }
+
+    public String getPhoneOperatotText(){
+        return driver.findElement(PHONE_OPERATOR).getText();
+    }
+
+    public String getPhoneNumberText(){
+        return driver.findElement(PHONE_NUMBER).getText();
+    }
+
 }
