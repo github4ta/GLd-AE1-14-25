@@ -62,14 +62,12 @@ public class HomeTest {
 
     @Test
     public void verifyAddressAndWorkTimeAreDisplayed() {
-        String address = driver.findElement(HEADER_TOP_INFO_ADDRESS_LINE).getText();
-        String time = driver.findElement(HEADER_TOP_INFO_TIME_LINE).getText();
-
-        Assertions.assertEquals(ADDRESS, address, "Wrong address is displayed in header");
-        Assertions.assertEquals(TIMEWORK, time, "Wrong work hours are displayed in header");
-        Assertions.assertTrue(driver.findElement(PIN_ICON).isDisplayed(), "Pin icon for address in header is not displayed");
-        Assertions.assertTrue(driver.findElement(TIME_ICON).isDisplayed(), "Time icon for work hours in header is not displayed");
+        Assertions.assertEquals(homePage.ADDRESS, homePage.getheaderTopInfoAddressLineText(), "Wrong address is displayed in header");
+        Assertions.assertEquals(homePage.TIMEWORK, homePage.getheaderTopInfoTimeLineText(), "Wrong work hours are displayed in header");
+        Assertions.assertTrue(homePage.isPinIconDisplayed(), "Pin icon for address in header is not displayed");
+        Assertions.assertTrue(homePage.isTimeIconDisplayed(), "Time icon for work hours in header is not displayed");
     }
+
     @Test
     public void testElementAccountButton (){
         WebElement elementAccountButton = driver.findElement(By.xpath(forAccountButton));
