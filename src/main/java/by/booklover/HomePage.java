@@ -2,7 +2,6 @@ package by.booklover;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 public class HomePage {
     private final String BASE_URL = "https://booklover.by/";
@@ -29,6 +28,10 @@ public class HomePage {
 
     public String getBasketButtonText(){
         return driver.findElement(BASKET_BUTTON).getText();
+    }
+
+    public String getHeaderTopNavOrderItem() {
+        return driver.findElement(HEADER_TOP_NAV_ORDER_ITEM).getText();
     }
 
 }
