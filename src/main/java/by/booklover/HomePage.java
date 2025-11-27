@@ -34,6 +34,10 @@ public class HomePage {
         driver.get(BASE_URL);
     }
 
+    public void clickCookieAlertClose() {
+        driver.get(COOKIE_ALERT_CLOSE);
+    }
+
     public String getBasketButtonText() {
         return driver.findElement(BACKET_BUTTON).getText();
     }
@@ -46,7 +50,7 @@ public class HomePage {
         return driver.findElement(By.xpath(LOYALTY_PROGRAM_BUTTON)).getText();
     }
 
-    public String getDeliveryUrlText(){
+    public String getDeliveryUrlText() {
         return driver.findElement(By.xpath(deliveryUrl)).getText();
     }
 
@@ -54,15 +58,15 @@ public class HomePage {
         return driver.findElement(By.xpath(forOrganizationsUrl)).getText();
     }
 
-    public String getContactText(){
+    public String getContactText() {
         return driver.findElement(By.xpath(contactsUrl)).getText();
     }
 
-    public String getPhoneOperatotText(){
+    public String getPhoneOperatotText() {
         return driver.findElement(PHONE_OPERATOR).getText();
     }
 
-    public String getPhoneNumberText(){
+    public String getPhoneNumberText() {
         return driver.findElement(PHONE_NUMBER).getText();
     }
 
