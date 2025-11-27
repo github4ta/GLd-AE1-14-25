@@ -31,16 +31,12 @@ public class HomeTest {
 
     @Test
     public void verifyOrderItemTextInHeaderNav() {
-        WebElement elementOrder = driver.findElement(HEADER_TOP_NAV_ORDER_ITEM);
-        Assertions.assertEquals("Заказ", elementOrder.getText());
+        Assertions.assertEquals("Заказ", homePage.getHragerTopNavOrderItem());
     }
 
     @Test
     public void testLoyaltyProgramButton() {
-        WebElement loyaltyProgramButton = driver.findElement(By.xpath(LOYALTY_PROGRAM_BUTTON));
-        String expectedText = "Программа лояльности";
-        String actualText = loyaltyProgramButton.getText();
-        Assertions.assertEquals(expectedText, actualText);
+        Assertions.assertEquals("Программа лояльности", homePage.getLoyaltyProgramButton());
     }
 
     @Test
