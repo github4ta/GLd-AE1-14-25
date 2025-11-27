@@ -41,14 +41,12 @@ public class HomeTest {
 
     @Test
     public void testDelivery() {
-        WebElement elementDelivery = driver.findElement(By.xpath(deliveryUrl));
-        Assertions.assertEquals("Доставка", elementDelivery.getText());
+        Assertions.assertEquals("Доставка", homePage.getDeliveryUrlText());
     }
 
     @Test
     public void testForOrganizations() {
-        WebElement elementForOrganizations = driver.findElement(By.xpath(forOrganizationsUrl));
-        Assertions.assertEquals("Для организаций", elementForOrganizations.getText());
+        Assertions.assertEquals("Для организаций", homePage.getForOrganizationsUrlText());
     }
 
     @Test
