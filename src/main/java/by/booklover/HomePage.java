@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 
 public class HomePage {
 
-
     private final String BASE_URL = "https://booklover.by/";
     private final String ADDRESS = "ТЦ Купаловский, павильон 10";
     private final String TIMEWORK = "Пн-сб 11:00-19:00";
@@ -30,12 +29,16 @@ public class HomePage {
 
     private WebDriver driver;
 
+    public HomePage(WebDriver driver) {
+        this.driver = driver;
+    }
+
     public void open() {
         driver.get(BASE_URL);
     }
 
     public void clickCookieAlertClose() {
-        driver.get(COOKIE_ALERT_CLOSE);
+        driver.findElement(By.xpath(COOKIE_ALERT_CLOSE)).click();
     }
 
     public String getBasketButtonText() {
