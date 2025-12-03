@@ -53,14 +53,14 @@ public class HomeTest {
 
     @Test
     public void testVerifyContactOperatorsAndPhone() {
-        Assertions.assertEquals(homePage.PHONE_OPERATOR_LABEL, homePage.getPhoneOperatotText());
+        Assertions.assertEquals(homePage.PHONE_OPERATOR_LABEL, homePage.getPhoneOperatorText());
         Assertions.assertEquals(homePage.PHONE_NUMBER_LABEL, homePage.getPhoneNumberText());
     }
 
     @Test
     public void verifyAddressAndWorkTimeAreDisplayed() {
-        Assertions.assertEquals(homePage.ADDRESS, homePage.getheaderTopInfoAddressLineText(), "Wrong address is displayed in header");
-        Assertions.assertEquals(homePage.TIMEWORK, homePage.getheaderTopInfoTimeLineText(), "Wrong work hours are displayed in header");
+        Assertions.assertEquals(homePage.ADDRESS, homePage.getHeaderTopInfoAddressLineText(), "Wrong address is displayed in header");
+        Assertions.assertEquals(homePage.TIMEWORK, homePage.getHeaderTopInfoTimeLineText(), "Wrong work hours are displayed in header");
         Assertions.assertTrue(homePage.isPinIconDisplayed(), "Pin icon for address in header is not displayed");
         Assertions.assertTrue(homePage.isTimeIconDisplayed(), "Time icon for work hours in header is not displayed");
     }
