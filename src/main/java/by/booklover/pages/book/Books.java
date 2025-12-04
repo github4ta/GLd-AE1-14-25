@@ -1,4 +1,4 @@
-package by.booklover.book;
+package by.booklover.pages.book;
 
 import java.util.ArrayList;
 import java.util.Comparator;

@@ -1,6 +1,6 @@
-package by.booklover.cart;
+package by.booklover.pages.cart;
 
-import by.booklover.book.Book;
+import by.booklover.pages.book.Book;
 import by.booklover.user.User;
 
 import java.util.ArrayList;

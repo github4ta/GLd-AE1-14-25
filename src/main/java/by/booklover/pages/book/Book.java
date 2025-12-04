@@ -1,6 +1,6 @@
-package by.booklover.book;
+package by.booklover.pages.book;
 
-import by.booklover.author.Author;
+import by.booklover.pages.author.Author;
 
 import java.util.Objects;
 

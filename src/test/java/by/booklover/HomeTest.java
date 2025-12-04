@@ -1,11 +1,13 @@
 package by.booklover;
 
-import by.booklover.utils.Waits;
+import by.booklover.pages.home.HomePage;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class HomeTest {
@@ -54,7 +56,7 @@ public class HomeTest {
 
     @Test
     public void testVerifyContactOperatorsAndPhone() {
-        Assertions.assertEquals(homePage.PHONE_OPERATOR_LABEL, homePage.getPhoneOperatorText());
+        Assertions.assertEquals(homePage.PHONE_OPERATOR_LABEL, homePage.getPhoneOperatotText());
         Assertions.assertEquals(homePage.PHONE_NUMBER_LABEL, homePage.getPhoneNumberText());
     }
 

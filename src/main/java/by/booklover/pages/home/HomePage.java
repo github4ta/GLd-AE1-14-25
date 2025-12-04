@@ -1,4 +1,4 @@
-package by.booklover;
+package by.booklover.pages.home;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -83,11 +83,11 @@ public class HomePage {
         return driver.findElement(PHONE_NUMBER).getText();
     }
 
-    public String getheaderTopInfoAddressLineText() {
+    public String getHeaderTopInfoAddressLineText() {
         return driver.findElement(HEADER_TOP_INFO_ADDRESS_LINE).getText();
     }
 
-    public String getheaderTopInfoTimeLineText() {
+    public String getHeaderTopInfoTimeLineText() {
         return driver.findElement(HEADER_TOP_INFO_TIME_LINE).getText();
     }
 
