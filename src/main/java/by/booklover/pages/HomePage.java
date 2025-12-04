@@ -2,10 +2,14 @@ package by.booklover.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import javax.lang.model.element.Element;
 
 public class HomePage {
 
     private final String BASE_URL = "https://booklover.by/";
+    public final String DELIVERY_URL = "https://booklover.by/delivery/";
 
     public final String ADDRESS = "ТЦ Купаловский, павильон 10";
     public final String TIMEWORK = "Пн-сб 11:00-19:00";
@@ -105,5 +109,13 @@ public class HomePage {
 
     public String getPaymentUrlText() {
         return driver.findElement(By.xpath(paymentUrl)).getText();
+    }
+
+    public String getDeliveryButtonUrl(){
+        return driver.findElement(By.xpath(deliveryUrl)).getAttribute("href");
+    }
+
+    public WebElement getDeliveryButton(){
+        return driver.findElement(By.xpath(deliveryUrl));
     }
 }
