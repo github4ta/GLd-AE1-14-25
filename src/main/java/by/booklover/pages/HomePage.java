@@ -1,4 +1,4 @@
-package by.booklover.pages.home;
+package by.booklover.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
