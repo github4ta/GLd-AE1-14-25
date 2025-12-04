@@ -1,11 +1,10 @@
-package by.booklover.user;
+package by.booklover.models.user;
 
 import java.util.Objects;
 
 public class User {
     private String phoneNumber;
     private int password;
-
 
     public int getPassword() {
         return password;

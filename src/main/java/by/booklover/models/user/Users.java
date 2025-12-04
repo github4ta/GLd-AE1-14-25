@@ -1,4 +1,4 @@
-package by.booklover.user;
+package by.booklover.models.user;
 
 import java.util.ArrayList;
 import java.util.List;

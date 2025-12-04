@@ -1,4 +1,4 @@
-package by.booklover.pages.author;
+package by.booklover.models;
 
 import java.util.Objects;
 
