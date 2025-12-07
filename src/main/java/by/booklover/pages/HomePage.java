@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 public class HomePage {
 
     private final String BASE_URL = "https://booklover.by/";
+    private final String ORDER_URL = "https://booklover.by/order/";
 
     public final String ADDRESS = "ТЦ Купаловский, павильон 10";
     public final String TIMEWORK = "Пн-сб 11:00-19:00";
@@ -28,6 +29,7 @@ public class HomePage {
     private final By BACKET_BUTTON = By.xpath("//span[@class='user-link__text']");
     private final By PHONE_OPERATOR = By.xpath("//p[@class='header__top-phone-operator']");
     private final By PHONE_NUMBER = By.xpath("//p[@class='header__top-phone-number']");
+    private final By ORDER_BUTTON = By.xpath("//li[@class='footer__nav-item']/a[@href='/order/']");
 
     private final String COOKIE_ALERT_CLOSE = "//span[@id='js-cookie-alert-close']";
     private final String LOYALTY_PROGRAM_BUTTON = "//div[@class='header__wrapper header__wrapper--top']/nav/ul/li[4]/a";
@@ -36,6 +38,7 @@ public class HomePage {
     private String contactsUrl = "//li[@class='nav__item']/a[@href='/contacts/']";
     private String forAccountButton = "//a[@class='header__user-link user-link user-link--account']";
     private String paymentUrl = "//li[@class='nav__item']/a[@href='/payment/']";
+
 
     private WebDriver driver;
 
@@ -106,4 +109,6 @@ public class HomePage {
     public String getPaymentUrlText() {
         return driver.findElement(By.xpath(paymentUrl)).getText();
     }
+
+    public void clickOrderButton(){driver.findElement(ORDER_BUTTON).click();}
 }
