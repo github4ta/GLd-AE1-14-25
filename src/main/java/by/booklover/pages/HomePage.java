@@ -55,7 +55,7 @@ public class HomePage {
         return driver.findElement(BACKET_BUTTON).getText();
     }
 
-    public String getHragerTopNavOrderItem() {
+    public String getHeaderTopNavOrderItem() {
         return driver.findElement(HEADER_TOP_NAV_ORDER_ITEM).getText();
     }
 
@@ -105,5 +105,9 @@ public class HomePage {
 
     public String getPaymentUrlText() {
         return driver.findElement(By.xpath(paymentUrl)).getText();
+    }
+
+    public void clickForOrganizationsUrl() {
+        driver.findElement(By.xpath(forOrganizationsUrl)).click();
     }
 }

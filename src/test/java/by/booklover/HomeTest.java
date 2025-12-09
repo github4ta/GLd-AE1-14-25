@@ -31,7 +31,7 @@ public class HomeTest {
 
     @Test
     public void verifyOrderItemTextInHeaderNav() {
-        Assertions.assertEquals(homePage.ORDER_LABEL, homePage.getHragerTopNavOrderItem());
+        Assertions.assertEquals(homePage.ORDER_LABEL, homePage.getHeaderTopNavOrderItem());
     }
 
     @Test
