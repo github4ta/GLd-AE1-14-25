@@ -38,7 +38,7 @@ public class ProgramLoyaltyTest {
 
     @Test
     public void verifyLoyaltyProgramTitle() {
-        Assertions.assertEquals(programLoyaltyPage.PROGRAM_LOYALTY_LABEL, programLoyaltyPage.getProgramLoyaltyTitleText());
+        Assertions.assertEquals(programLoyaltyPage.PROGRAM_LOYALTY_LABEL, driver.getTitle());
     }
 
     @Test
