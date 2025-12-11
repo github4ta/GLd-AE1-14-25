@@ -4,8 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import javax.lang.model.element.Element;
-
 public class HomePage {
 
     private final String BASE_URL = "https://booklover.by/";
@@ -55,11 +53,15 @@ public class HomePage {
         driver.findElement(By.xpath(COOKIE_ALERT_CLOSE)).click();
     }
 
+    public void clickForOrganizationsUrl() {
+        driver.findElement(By.xpath(forOrganizationsUrl)).click();
+    }
+
     public String getBasketButtonText() {
         return driver.findElement(BACKET_BUTTON).getText();
     }
 
-    public String getHragerTopNavOrderItem() {
+    public String getHeaderTopNavOrderItem() {
         return driver.findElement(HEADER_TOP_NAV_ORDER_ITEM).getText();
     }
 
