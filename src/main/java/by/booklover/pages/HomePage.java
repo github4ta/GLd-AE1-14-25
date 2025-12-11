@@ -106,4 +106,8 @@ public class HomePage {
     public String getPaymentUrlText() {
         return driver.findElement(By.xpath(paymentUrl)).getText();
     }
+
+    public void ClickForAccountButton() {
+        driver.findElement(By.xpath(forAccountButton)).click();
+    }
 }
