@@ -87,6 +87,17 @@ public class HomeTest {
         Assertions.assertEquals("Поиск среди 290 000 книг, введите автора, название, isbn, серию или другое...",getAttribute);
     }
 
+    @Test
+    public void testDeliveryUrl(){
+        Assertions.assertEquals(homePage.DELIVERY_URL,homePage.getDeliveryButtonUrl());
+    }
+
+    @Test
+    public void testClickDeliveryButton(){
+       homePage.getDeliveryButton().click();
+       Assertions.assertEquals(driver.getCurrentUrl(),homePage.DELIVERY_URL);
+    }
+
     @AfterEach
     public void quitDriver() {
         driver.quit();
