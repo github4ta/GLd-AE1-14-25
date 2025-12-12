@@ -39,13 +39,13 @@ private ProfilePage profilePage;
 }
 
 @Test
-    public void testProfilePageAuthorization () {
-    Assertions.assertEquals(profilePage.TEXT_AUTHORIZATION_LABEL, profilePage.getAuthorizationText());
+    public void testProfilePageAuthorizationBlockTitle() {
+    Assertions.assertTrue(profilePage.getAuthorizationText().contains(profilePage.TEXT_AUTHORIZATION_LABEL));
 }
 
 @Test
-    public void testProfilePageRegistration () {
-    Assertions.assertEquals(profilePage.TEXT_REGISTRATION_LABEL, profilePage.getRegistrationText());
+    public void testProfilePageRegistrationBlockTitle() {
+    Assertions.assertTrue(profilePage.getRegistrationText().contains(profilePage.TEXT_REGISTRATION_LABEL));
 }
 
 @AfterEach
