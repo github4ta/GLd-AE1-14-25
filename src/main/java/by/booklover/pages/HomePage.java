@@ -61,7 +61,7 @@ public class HomePage {
         return driver.findElement(BACKET_BUTTON).getText();
     }
 
-    public String getHeaderTopNavOrderItem() {
+    public String getHragerTopNavOrderItem() {
         return driver.findElement(HEADER_TOP_NAV_ORDER_ITEM).getText();
     }
 
@@ -119,5 +119,9 @@ public class HomePage {
 
     public WebElement getDeliveryButton(){
         return driver.findElement(By.xpath(deliveryUrl));
+    }
+
+    public void ClickForAccountButton() {
+        driver.findElement(By.xpath(forAccountButton)).click();
     }
 }
