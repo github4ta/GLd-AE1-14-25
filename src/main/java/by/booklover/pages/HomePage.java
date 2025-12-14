@@ -30,6 +30,8 @@ public class HomePage {
     private final By BACKET_BUTTON = By.xpath("//span[@class='user-link__text']");
     private final By PHONE_OPERATOR = By.xpath("//p[@class='header__top-phone-operator']");
     private final By PHONE_NUMBER = By.xpath("//p[@class='header__top-phone-number']");
+    private final By SEARCH_FIELD = By.xpath("//input[@id='search']");
+    private final By SEARCH_BUTTON = By.xpath("//form[@class='header__search-form']/button");
 
     private final String COOKIE_ALERT_CLOSE = "//span[@id='js-cookie-alert-close']";
     private final String LOYALTY_PROGRAM_BUTTON = "//div[@class='header__wrapper header__wrapper--top']/nav/ul/li[4]/a";
@@ -87,6 +89,14 @@ public class HomePage {
 
     public String getPhoneNumberText() {
         return driver.findElement(PHONE_NUMBER).getText();
+    }
+
+    public WebElement getSearchField() {
+        return driver.findElement(SEARCH_FIELD);
+    }
+
+    public WebElement getSearchButton() {
+        return driver.findElement(SEARCH_BUTTON);
     }
 
     public String getHeaderTopInfoAddressLineText() {
