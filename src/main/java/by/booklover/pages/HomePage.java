@@ -128,4 +128,8 @@ public class HomePage {
     public void clickProgramLoyaltyButton() {
          driver.findElement(By.xpath(PROGRAM_LOYALTY_BUTTON)).click();
     }
+
+    public void clickPaymentLink() {
+        driver.findElement(By.xpath(paymentUrl)).click();
+    }
 }
