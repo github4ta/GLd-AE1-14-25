@@ -35,8 +35,8 @@ public class HomeTest {
     }
 
     @Test
-    public void testLoyaltyProgramButton() {
-        Assertions.assertEquals(homePage.LOYALTY_PROGRAM_LABEL, homePage.getLoyaltyProgramButton());
+    public void testProgramLoyaltyButton() {
+        Assertions.assertEquals(homePage.PROGRAM_LOYALTY_LABEL, homePage.getProgramLoyaltyButton());
     }
 
     @Test
