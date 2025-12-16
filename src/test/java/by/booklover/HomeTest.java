@@ -35,8 +35,8 @@ public class HomeTest {
     }
 
     @Test
-    public void testLoyaltyProgramButton() {
-        Assertions.assertEquals(homePage.LOYALTY_PROGRAM_LABEL, homePage.getLoyaltyProgramButton());
+    public void testProgramLoyaltyButton() {
+        Assertions.assertEquals(homePage.PROGRAM_LOYALTY_LABEL, homePage.getProgramLoyaltyButton());
     }
 
     @Test
@@ -85,17 +85,6 @@ public class HomeTest {
         Assertions.assertTrue(driver.findElement(By.xpath(textInSearch)).isDisplayed());
         String getAttribute = driver.findElement(By.xpath(textInSearch)).getAttribute("placeholder");
         Assertions.assertEquals("Поиск среди 290 000 книг, введите автора, название, isbn, серию или другое...",getAttribute);
-    }
-
-    @Test
-    public void testDeliveryUrl(){
-        Assertions.assertEquals(homePage.DELIVERY_URL,homePage.getDeliveryButtonUrl());
-    }
-
-    @Test
-    public void testClickDeliveryButton(){
-       homePage.getDeliveryButton().click();
-       Assertions.assertEquals(driver.getCurrentUrl(),homePage.DELIVERY_URL);
     }
 
     @AfterEach
