@@ -28,7 +28,7 @@ public class ProfilePage {
 
     public String getProfilePageTitleText() {
         return driver.findElement(PROFILE_PAGE_TITLE).getText();
-        }
+    }
 
     public String getTitleRegisterText() {
         return driver.findElement(TITLE_REGISTER_TEXT).getText();
@@ -36,17 +36,17 @@ public class ProfilePage {
 
     public boolean isAuthorizationBlockDisplayed() {
         return driver.findElement(AUTHORIZATION_BLOCK).isDisplayed();
-        }
+    }
 
-    public String getAuthorizationText (){
+    public String getAuthorizationText() {
         return driver.findElement(AUTHORIZATION_TEXT).getText();
     }
 
     public boolean isRegistrationBlockDisplayed() {
         return driver.findElement(REGISTRATION_BLOCK).isDisplayed();
-        }
+    }
 
-    public String getRegistrationText () {
-        return  driver.findElement(REGISTRATION_TEXT).getText();
+    public String getRegistrationText() {
+        return driver.findElement(REGISTRATION_TEXT).getText();
     }
 }
