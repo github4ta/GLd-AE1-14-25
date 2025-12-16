@@ -20,7 +20,7 @@ public class PaymentTest {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
 
-        homePage = new HomePage(driver);
+        homePage = new HomePage();
         homePage.open();
         homePage.clickCookieAlertClose();
         homePage.clickPaymentLink();
