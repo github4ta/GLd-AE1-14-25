@@ -6,7 +6,6 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -25,7 +24,7 @@ public class SearchTest {
         homePage.clickCookieAlertClose();
         //homePage.clickSearchField();
         //homePage.typeText();
-        homePage.clickSubmitSearchButton();
+        // homePage.clickSubmitSearchButton();
 
         searchPage = new SearchPage(driver);
     }

@@ -1,7 +1,6 @@
 package by.booklover;
 
 import by.booklover.pages.HomePage;
-import by.booklover.pages.OurClientsPage;
 import by.booklover.pages.ProgrammaLoyalnostiPage;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
