@@ -24,7 +24,7 @@ public class SearchTest {
         homePage.clickCookieAlertClose();
         //homePage.clickSearchField();
         //homePage.typeText();
-        homePage.clickSubmitSearchButton();
+       // homePage.clickSubmitSearchButton();
 
         searchPage = new SearchPage(driver);
     }
