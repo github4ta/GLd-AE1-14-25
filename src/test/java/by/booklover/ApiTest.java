@@ -23,9 +23,10 @@ public class ApiTest {
                 .formParam("backurl", "/personal/profile/")
                 .formParam("USER_LOGIN", "+375 33 333-3333")
                 .formParam("USER_PASSWORD", "wewewewewwewe")
-        .when()
+                .when()
                 .post(url)
-        .then().assertThat().statusCode(200);
+                .then().assertThat().statusCode(200);
     }
 
 }
+
