@@ -4,8 +4,9 @@ import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
 import static io.restassured.RestAssured.when;
+import static org.hamcrest.Matchers.equalTo;
 
-    public class ApiTest {
+public class ApiTest {
         @Test
         public void testBeHomePage() {
             String url ="https://booklover.by/";
@@ -50,6 +51,9 @@ import static io.restassured.RestAssured.when;
             .then()
                     .log()
                     .all()
-                    .statusCode(401);
+                    .statusCode(401)
+                    .body("message", equalTo("authentication failed"))
+                    .body("label.text", equalTo("Такого профиля не существует"))
+                    .body("http.message", equalTo("Unauthorized"));
         }
     }
