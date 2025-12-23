@@ -1,5 +1,6 @@
 package by.booklover;
 
+import org.apache.http.auth.AUTH;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
@@ -23,9 +24,26 @@ public class APITest {
                 .formParam("backurl", "/personal/profile/")
                 .formParam("USER_LOGIN", "+375 33 333-3333")
                 .formParam("USER_PASSWORD", "wewewewewwewe")
-        .when()
+                .when()
                 .post(url)
-        .then().assertThat().statusCode(200);
+                .then().assertThat().statusCode(200);
     }
 
+    @Test
+    public void testPostLoginSportpari(){
+        String url = "https://sportpari.by/api/auth/credentials/login";
+        String body = """
+                {
+                    "username": "",
+                    "password": "13341",
+                    "remember": false,
+                    "phone_number": "+375295565255",
+                    "fingerprint": "42029a40aff2afd651f6c394638c04ae"
+                }
+                """;
+
+        given().body(body).when().post(url).then().log().all();
+
+
+    }
 }
