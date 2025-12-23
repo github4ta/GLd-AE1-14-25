@@ -28,5 +28,14 @@ public class ApiTest {
                 .then().assertThat().statusCode(200);
     }
 
+    @Test
+    public void testPostKufar() {
+        String url = "";
+        when()
+            .post(url)
+        .then()
+            .log().all();
+    }
+
 }
 
