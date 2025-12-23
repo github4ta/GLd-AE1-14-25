@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
 import static io.restassured.RestAssured.when;
+import static org.hamcrest.Matchers.equalTo;
 
 public class APITest {
     @Test
@@ -42,8 +43,6 @@ public class APITest {
                 }
                 """;
 
-        given().body(body).when().post(url).then().log().all();
-
-
+        given().header("content-type","application/json").body(body).when().post(url).then().log().all().statusCode(422).body("phone_number[0]", equalTo("data_not_valid")).body("password[0]",equalTo("data_not_valid"));
     }
 }
