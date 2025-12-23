@@ -2,31 +2,30 @@ package by.booklover;
 
 import org.junit.jupiter.api.Test;
 
-import static io.restassured.RestAssured.when;
 import static io.restassured.RestAssured.given;
+import static io.restassured.RestAssured.when;
 
-public class ApiTest {
+public class APITest {
     @Test
     public void testGetHomePage() {
-        String homePageUrl = "https://booklover.by/";
-
-        when().get(homePageUrl).then().log().all();
+        String url = "https://booklover.by/";
+        when().get(url).then().statusCode(200);
     }
+
     @Test
     public void testPostLogIn() {
-        String homePageUrl = "https://booklover.by/personal/profile/?login=yes";
-
+        String url = "https://booklover.by/personal/profile/?login=yes";
         given()
                 .contentType("application/x-www-form-urlencoded")
-                .formParam("")
-                .formParam("")
-                .formParam("")
-                .formParam("")
-                .formParam("")
+                .formParam("AUTH_FORM", "Y")
+                .formParam("TYPE", "AUTH")
+                .formParam("USER_REMEMBER", "Y")
+                .formParam("backurl", "/personal/profile/")
+                .formParam("USER_LOGIN", "+375 33 333-3333")
+                .formParam("USER_PASSWORD", "wewewewewwewe")
         .when()
-                .post(homePageUrl)
-        .then()
-                .assertThat().statusCode(200);
-
+                .post(url)
+        .then().assertThat().statusCode(200);
     }
+
 }
