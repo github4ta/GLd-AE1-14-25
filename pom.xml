@@ -10,6 +10,7 @@
 
     <properties>
         <junit.version>5.10.2</junit.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencies>
