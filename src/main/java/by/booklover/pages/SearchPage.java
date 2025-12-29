@@ -1,5 +1,6 @@
 package by.booklover.pages;
 
+import by.booklover.driver.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -30,12 +31,12 @@ public class SearchPage {
     private WebDriver driver;
     private WebDriverWait wait;
 
-    public SearchPage(WebDriver driver) {
-        this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    public SearchPage() {
+        this.driver = Driver.getDriver();
     }
 
     public void waitForSearchResultPage() {
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.urlContains("/search/?q="));
     }
 
@@ -52,14 +53,17 @@ public class SearchPage {
         driver.findElement(SEARCH_FIELD).sendKeys(SEARCH_QUERY_WITH_RESULTS);
         driver.findElement(SEARCH_SUBMIT_BUTTON).click();
 
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.urlContains("/search"));
     }
 
     public String getNotFoundSearchResultTitle() {
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(NOT_FOUND_SEARCH_RESULT_TITLE)).getText();
     }
 
     public String getFoundSearchResultTitle() {
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(FOUND_SEARCH_RESULT_TITLE)).getText();
     }
 }
