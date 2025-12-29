@@ -23,7 +23,7 @@ public class PaymentTest {
         try {
             homePage.clickCookieAlertClose();
         } catch (Exception ignored) {
-            // Куки-алерт может отсутствовать — игнорируем
+            
         }
         homePage.clickPaymentLink();
     }
