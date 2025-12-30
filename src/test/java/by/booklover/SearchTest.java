@@ -13,29 +13,36 @@ public class SearchTest {
     private SearchPage searchPage;
 
     @BeforeEach
-    public void setupDriverAndOpenHomePageAndEnterSearchTextAndOpenSearchPage() {
+    public void setupDriverAndOpenHomePageAndCloseCookieAlert() {
         homePage = new HomePage();
         homePage.open();
         homePage.clickCookieAlertClose();
+    }
 
+    @Test
+    public void testIsSearchPageContainsParams() {
+        homePage.getSearchButton().click();
+        Assertions.assertEquals("https://booklover.by/search/?q=", Driver.getDriver().getCurrentUrl());
+    }
+
+    @Test
+    public void testShouldDisplayNoResultsForQueryQwerty() {
         searchPage = new SearchPage();
+        searchPage.open("qwerty");
+        Assertions.assertEquals("Ничего не найдено по запросу “qwerty”", searchPage.getSearchNotFoundTitle());
+        Assertions.assertEquals("Пожалуйста, убедитесь, что запрос введен корректно или переформулируйте его.", searchPage.getSearchNotFoundText());
     }
 
     @Test
-    public void testNotFoundSearchResultPageTitle() {
-        searchPage.enterSearchQueryWithoutResults();
-        Assertions.assertEquals(searchPage.getNotFoundSearchResultTitle(), searchPage.NOT_FOUND_SEARCH_RESULT_TITLE_TEXT);
-    }
-
-    @Test
-    public void testFoundSearchResultPageTitle() {
-        searchPage.enterSearchQueryWithResults();
-        Assertions.assertTrue(searchPage.getFoundSearchResultTitle().contains(searchPage.FOUND_SEARCH_RESULT_TITLE_START_TEXT)
-                && searchPage.getFoundSearchResultTitle().contains(searchPage.FOUND_SEARCH_RESULT_TITLE_END_TEXT), "Incorrect Search result page title.");
+    public void testShouldDisplayResultsJava() {
+        searchPage = new SearchPage();
+        searchPage.open("java");
+        Assertions.assertEquals("Найдено 6 книг по запросу “java”", searchPage.getSearchResultTitle());
     }
 
     @AfterEach
-    public void quitDriver() {
+    public void closeBrowser() {
         Driver.quit();
     }
+
 }
