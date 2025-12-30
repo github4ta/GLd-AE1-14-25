@@ -4,13 +4,17 @@ import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
 import static io.restassured.RestAssured.when;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class PersonalProfileTest {
 
     @Test
     public void testPostLogIn() {
-        String url = "https://booklover.by/personal/profile/?login=yes";
-        given()
+        String url = "https://booklover.by/personal/profile/";
+
+        given().queryParam("login", "yes")
+
                 .contentType("application/x-www-form-urlencoded")
                 .formParam("AUTH_FORM", "Y")
                 .formParam("TYPE", "AUTH")
@@ -21,5 +25,19 @@ public class PersonalProfileTest {
                 .when()
                 .post(url)
                 .then().assertThat().statusCode(200);
+    }
+
+    @Test
+    public void testLogin() {
+        PersonalProfile personalProfile = new PersonalProfile();
+
+        personalProfile.setUserLogin("+375 29 689-5587");
+        personalProfile.setUserPassword("5662266");
+
+        personalProfile.doRequest();
+        assertAll("personalProfile",
+                () -> assertEquals(200, personalProfile.getStatusCode()),
+                () -> assertTrue(personalProfile.getBody().contains("Неверный телефон или пароль"), "Text does not corrector")
+        );
     }
 }
