@@ -1,5 +1,6 @@
 package by.booklover.pages;
 
+import by.booklover.driver.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,7 +14,7 @@ public class HomePage {
     public final String TIMEWORK = "Пн-сб 11:00-19:00";
     public final String BASKET_LABEL = "Корзина";
     public final String ORDER_LABEL = "Заказ";
-    public final String LOYALTY_PROGRAM_LABEL = "Программа лояльности";
+    public final String PROGRAM_LOYALTY_LABEL = "Программа лояльности";
     public final String DELIVERY_LABLE = "Доставка";
     public final String FOR_ORGANISATION_URL_LABEL = "Для организаций";
     public final String CONTACTS_URL_LABEL = "Контакты";
@@ -34,7 +35,7 @@ public class HomePage {
 
 
     private final String COOKIE_ALERT_CLOSE = "//span[@id='js-cookie-alert-close']";
-    private final String LOYALTY_PROGRAM_BUTTON = "//div[@class='header__wrapper header__wrapper--top']/nav/ul/li[4]/a";
+    private final String PROGRAM_LOYALTY_BUTTON = "//div[@class='header__wrapper header__wrapper--top']/nav/ul/li[4]/a";
     private String deliveryUrl = "//li[@class='nav__item']/a[@href='/delivery/']";
     private String forOrganizationsUrl = "//li[@class='nav__item']/a[@href='/our-clients/']";
     private String contactsUrl = "//li[@class='nav__item']/a[@href='/contacts/']";
@@ -43,8 +44,8 @@ public class HomePage {
 
     private WebDriver driver;
 
-    public HomePage(WebDriver driver) {
-        this.driver = driver;
+    public HomePage() {
+        this.driver = Driver.getDriver();
     }
 
     public void open() {
@@ -63,12 +64,12 @@ public class HomePage {
         return driver.findElement(BACKET_BUTTON).getText();
     }
 
-    public String getHeaderTopNavOrderItem() {
+    public String getHragerTopNavOrderItem() {
         return driver.findElement(HEADER_TOP_NAV_ORDER_ITEM).getText();
     }
 
-    public String getLoyaltyProgramButton() {
-        return driver.findElement(By.xpath(LOYALTY_PROGRAM_BUTTON)).getText();
+    public String getProgramLoyaltyButton() {
+        return driver.findElement(By.xpath(PROGRAM_LOYALTY_BUTTON)).getText();
     }
 
     public String getDeliveryUrlText() {
@@ -123,5 +124,17 @@ public class HomePage {
 
     public WebElement getDeliveryButton(){
         return driver.findElement(By.xpath(deliveryUrl));
+    }
+
+    public void ClickForAccountButton() {
+        driver.findElement(By.xpath(forAccountButton)).click();
+    }
+
+    public void clickProgramLoyaltyButton() {
+         driver.findElement(By.xpath(PROGRAM_LOYALTY_BUTTON)).click();
+    }
+
+    public void clickPaymentLink() {
+        driver.findElement(By.xpath(paymentUrl)).click();
     }
 }

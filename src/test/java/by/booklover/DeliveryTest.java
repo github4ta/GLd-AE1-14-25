@@ -8,8 +8,10 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+// TODO Рефакторить класс: убрать переменную класса driver,
+// TODO переписать конструктор DeliveryPage() по аналогии с конструктором HomePage()
+// TODO метод AfterEach переписать с использованием метода quite() класса Driver
 public class DeliveryTest {
-
     private WebDriver driver;
     private DeliveryPage deliveryPage;
 
