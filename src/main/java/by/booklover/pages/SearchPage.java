@@ -1,5 +1,6 @@
 package by.booklover.pages;
 
+import by.booklover.driver.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -12,7 +13,7 @@ public class SearchPage {
 
     private WebDriver driver;
 
-    public SearchPage(WebDriver driver) {this.driver = driver;}
+    public SearchPage() {this.driver = Driver.getDriver();}
 
     public void open(String searchParam) {driver.get(SEARCH_PAGE_URL + searchParam);}
 
