@@ -1,5 +1,6 @@
 package by.booklover;
 
+import by.booklover.driver.Driver;
 import by.booklover.pages.HomePage;
 import by.booklover.pages.OurClientsPage;
 import org.junit.jupiter.api.AfterEach;
@@ -10,26 +11,22 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class OurClientsTest {
-    private WebDriver driver;
     private HomePage homePage;
     private OurClientsPage ourClientsPage;
 
     @BeforeEach
     public void setupDriverAndOpenHomePageAndCloseCookieAlertAndOpenOurClientsPage() {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-
         homePage = new HomePage();
         homePage.open();
         homePage.clickCookieAlertClose();
         homePage.clickForOrganizationsUrl();
 
-        ourClientsPage = new OurClientsPage(driver);
+        ourClientsPage = new OurClientsPage();
     }
 
     @Test
     public void testOurClientsPageURL() {
-        Assertions.assertEquals(ourClientsPage.PAGE_URL, driver.getCurrentUrl());
+        Assertions.assertEquals(ourClientsPage.PAGE_URL, Driver.getDriver().getCurrentUrl());
     }
 
     @Test
@@ -39,6 +36,6 @@ public class OurClientsTest {
 
     @AfterEach
     public void quitDriver() {
-        driver.quit();
+        Driver.quit();
     }
 }
