@@ -1,5 +1,6 @@
 package by.booklover.pages;
 
+import by.booklover.driver.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -11,8 +12,8 @@ public class OurClientsPage {
 
     private WebDriver driver;
 
-    public OurClientsPage(WebDriver driver) {
-        this.driver = driver;
+    public OurClientsPage() {
+        this.driver = Driver.getDriver();
     }
 
     public String getOurClientsPageTitleText() {
