@@ -7,9 +7,14 @@ import static io.restassured.RestAssured.given;
 public class SearchService {
     private final String URL_SEARCH = "https://booklover.by/search/";
     private Response response;
+    private String searchQuery;
+
+    public void setSearchQuery(String searchQuery){
+        this.searchQuery = searchQuery;
+    }
 
     public void doRequest() {
-        response = given().queryParam("q", "ttt").when().get(URL_SEARCH);
+        response = given().queryParam("q", searchQuery).when().get(URL_SEARCH);
     }
 
     public int getStatusCode() {
@@ -19,4 +24,5 @@ public class SearchService {
     public String getBody() {
         return response.then().extract().body().asPrettyString();
     }
+
 }
