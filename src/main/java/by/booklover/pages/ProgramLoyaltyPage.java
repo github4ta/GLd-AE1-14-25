@@ -1,5 +1,6 @@
 package by.booklover.pages;
 
+import by.booklover.driver.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -28,10 +29,10 @@ public class ProgramLoyaltyPage {
 
     private final By DISCOUNT_TABLE_LOCATOR = By.xpath("//table[@class='order-info__table-discount table']");
 
-    private WebDriver driver;
+    private final WebDriver driver;
 
-    public ProgramLoyaltyPage(WebDriver driver) {
-        this.driver = driver;
+    public ProgramLoyaltyPage() {
+        this.driver = Driver.getDriver();
     }
 
     public WebElement getDiscountTableWebElement() {
