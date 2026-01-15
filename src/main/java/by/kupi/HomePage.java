@@ -9,7 +9,11 @@ public class HomePage {
     public final By COOKIE_PATH = By.xpath("//div[@id='ck-pup-default']/div[@class='pup-ck__buttons']/button[@class='pup-ck__button pup-ck__button--primary']");
     public final By BUTTON_ENTER = By.xpath("//li[@class='main-controls__item'][1]/button[@class='button-main-controls']");
     public final By FOOTER = By.xpath("//div[@class='footer__info footer-info']");
+    public final By COMPANY_NAME_IN_FOOTER =
+            By.xpath("//div[@class='container footer__container']//text()[contains(.,'ООО')]");
     private WebDriver driver;
+
+    public final String COMPANY_NAME_IN_FOOTER_TEXT = "ООО \"Дивный новый мир\"";
 
     public HomePage() {
         this.driver = Driver.getDriver();
@@ -29,5 +33,9 @@ public class HomePage {
 
     public String textFooter(){
         return driver.findElement(FOOTER).getText();
+    }
+
+    public String getTextCompanyNameInFooter(){
+        return driver.findElement(COMPANY_NAME_IN_FOOTER).getText();
     }
 }
