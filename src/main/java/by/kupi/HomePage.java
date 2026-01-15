@@ -1,5 +1,6 @@
 package by.kupi;
 
+import by.booklover.driver.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -10,8 +11,8 @@ public class HomePage {
     public final By FOOTER = By.xpath("//div[@class='footer__info footer-info']");
     private WebDriver driver;
 
-    public HomePage(WebDriver driver) {
-        this.driver = driver;
+    public HomePage() {
+        this.driver = Driver.getDriver();
     }
 
     public void open(){
