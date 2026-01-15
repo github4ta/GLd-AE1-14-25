@@ -41,6 +41,7 @@ public class HomePage {
     private String contactsUrl = "//li[@class='nav__item']/a[@href='/contacts/']";
     private String forAccountButton = "//a[@class='header__user-link user-link user-link--account']";
     private String paymentUrl = "//li[@class='nav__item']/a[@href='/payment/']";
+    private String cartButton = "//span[@class='user-link__text']";
 
     private WebDriver driver;
 
@@ -64,7 +65,7 @@ public class HomePage {
         return driver.findElement(BACKET_BUTTON).getText();
     }
 
-    public String getHragerTopNavOrderItem() {
+    public String getHeaderTopNavOrderItem() {
         return driver.findElement(HEADER_TOP_NAV_ORDER_ITEM).getText();
     }
 
@@ -136,5 +137,9 @@ public class HomePage {
 
     public void clickPaymentLink() {
         driver.findElement(By.xpath(paymentUrl)).click();
+    }
+
+    public void clickCartButton() {
+        driver.findElement(By.xpath(cartButton)).click();
     }
 }
