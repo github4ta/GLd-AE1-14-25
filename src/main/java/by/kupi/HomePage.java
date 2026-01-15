@@ -35,7 +35,7 @@ public class HomePage {
         return driver.findElement(FOOTER).getText();
     }
 
-    public String getTextCompanyNameInFooter(){
-        return driver.findElement(COMPANY_NAME_IN_FOOTER).getText();
+    public String getCompanyTextInFooter(){
+        return driver.findElement(FOOTER).getText();
     }
 }
