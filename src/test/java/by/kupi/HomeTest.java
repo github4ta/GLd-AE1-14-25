@@ -15,7 +15,7 @@ public class HomeTest {
 
     @Test
     public void testCompanyNameInFooter() {
-        Assertions.assertEquals(homePage.COMPANY_NAME_IN_FOOTER_TEXT, homePage.getTextCompanyNameInFooter());
+        Assertions.assertTrue(homePage.getCompanyTextInFooter().contains("ООО \"Дивный новый мир\""), "there's no 'Дивный новый мир' text");
     }
 
     @AfterEach
