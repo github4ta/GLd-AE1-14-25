@@ -20,3 +20,4 @@ public class OurClientsPage {
         return driver.findElement(ORGANIZATION_INFO_TITLE).getText();
     }
 }
+

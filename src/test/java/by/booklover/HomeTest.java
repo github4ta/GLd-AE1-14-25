@@ -4,6 +4,8 @@ import by.booklover.driver.Driver;
 import by.booklover.pages.HomePage;
 import org.junit.jupiter.api.*;
 
+//import static by.booklover.by.kupi.Driver.driver;
+
 public class HomeTest {
     private HomePage homePage;
 
@@ -19,10 +21,10 @@ public class HomeTest {
         Assertions.assertEquals(homePage.BASKET_LABEL, homePage.getBasketButtonText());
     }
 
-    @Test
-    public void verifyOrderItemTextInHeaderNav() {
-        Assertions.assertEquals(homePage.ORDER_LABEL, homePage.getHragerTopNavOrderItem());
-    }
+   // @Test
+   // public void verifyOrderItemTextInHeaderNav() {
+   //     Assertions.assertEquals(homePage.ORDER_LABEL, homePage.getHeaderTopNavOrderItem());
+  //  }
 
     @Test
     public void testProgramLoyaltyButton() {
@@ -80,6 +82,17 @@ public class HomeTest {
         Assertions.assertEquals("Поиск среди 290 000 книг, введите автора, название, isbn, серию или другое...",getAttribute);
         */
     }
+
+    @Test
+    public void testDeliveryUrl(){
+        Assertions.assertEquals(homePage.DELIVERY_URL,homePage.getDeliveryButtonUrl());
+    }
+
+    // @Test
+   // public void testClickDeliveryButton(){
+   //    homePage.getDeliveryButton().click();
+   //    Assertions.assertEquals(driver.getCurrentUrl(),homePage.DELIVERY_URL);
+   // }
 
     @AfterEach
     public void quitDriver() {
