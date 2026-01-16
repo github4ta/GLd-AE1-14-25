@@ -1,31 +1,30 @@
 package by.kupi;
 
-import by.kupi.Driver;
-import by.kupi.HomePage;
-import by.booklover.pages.HomePage;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import by.kupi.driver.Driver;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.junit.jupiter.api.*;
 
 public class HomeTest {
-
     private HomePage homePage;
+    private static final Logger logger = LogManager.getLogger();
+
 
     @BeforeEach
-    public void openHomePageCloseCookies(){
+    public void openHomePageAndCloseCookies() {
         homePage = new HomePage();
         homePage.open();
-        homePage.clickCookiesAccept();
+        homePage.clickCookie();
     }
 
     @Test
-    public void testCompanyNameInFooter(){
-        Assertions.assertTrue(homePage.getCompanyNameInFooterText().contains());
+    public void testCompanyNameInFooter() {
+        logger.info("Выполняется тест testCompanyNameInFooter");
+        Assertions.assertTrue(homePage.getCompanyTextInFooter().contains("ООО \"Дивный новый мир\""), "there's no 'Дивный новый мир' text");
     }
 
     @AfterEach
-    public void quit(){
+    public void tearDown() {
         Driver.quit();
     }
 }
