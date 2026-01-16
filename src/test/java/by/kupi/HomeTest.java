@@ -21,6 +21,7 @@ public class HomeTest {
     public void testCompanyNameInFooter() {
         logger.info("Выполняется тест testCompanyNameInFooter");
         Assertions.assertTrue(homePage.getCompanyTextInFooter().contains("ООО \"Дивный новый мир\""), "there's no 'Дивный новый мир' text");
+        System.out.println("Кодировка: " + System.getProperty("file.encoding"));
     }
 
     @AfterEach
