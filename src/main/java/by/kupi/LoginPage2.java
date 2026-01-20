@@ -8,16 +8,19 @@ public class LoginPage2 {
     private final String BUTTON_ENTER = "//button[@class='form-authorization__button form-button-primary']";
     private final String ERROR_MESSAGE = "//div[@class='dialog-authorization-content']/form[@id='form-authorization']/div[@class='form-field']/div[@class='form-field-error-message']";
 
-    public void inputEmail(String email){
+    public LoginPage2 inputEmail(String email){
         Driver.waitAndInput(INPUT_EMAIL, email);
+        return this;
     }
 
-    public void inputPassword(String password){
+    public LoginPage2 inputPassword(String password){
         Driver.waitAndInput(INPUT_PASSWORD, password);
+        return this;
     }
 
-    public void putButtonEnter(){
+    public LoginPage2 putButtonEnter(){
         Driver.click(BUTTON_ENTER);
+        return this;
     }
 
     public String getErrorMessage(){
