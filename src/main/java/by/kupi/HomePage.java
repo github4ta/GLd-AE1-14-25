@@ -23,18 +23,21 @@ public class HomePage {
         this.driver = Driver.getDriver();
     }
 
-    public void open(){
+    public HomePage open(){
         driver.get(HOME_URL);
         logger.info("Открылась домашняя страница");
+        return this;
     }
 
-    public void clickCookie(){
+    public HomePage clickCookie(){
         driver.findElement(COOKIE_PATH).click();
         logger.info("Принимаем кукки");
+        return this;
     }
 
-    public void clickEnter(){
+    public LoginPage2 clickEnter(){
         driver.findElement(BUTTON_ENTER).click();
+        return new LoginPage2();
     }
 
     public String textFooter(){
