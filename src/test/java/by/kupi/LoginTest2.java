@@ -8,23 +8,22 @@ import org.junit.jupiter.api.Test;
 
 public class LoginTest2 {
     private LoginPage2 loginPage;
-    private HomePage homePage;
 
     @BeforeEach
     public void openHomePageAndCloseCookiesAndClickEnter() {
-        homePage = new HomePage();
-        homePage.open();
-        homePage.clickCookie();
-        homePage.clickEnter();
-        loginPage = new LoginPage2();
+        loginPage = new HomePage()
+                .open()
+                .clickCookie()
+                .clickEnter();
     }
 
     @Test
     public void testLoginForm() {
-        loginPage.inputEmail("a.dgdg@rambler.ru");
-        loginPage.inputPassword("dddd");
-        loginPage.putButtonEnter();
-        Assertions.assertEquals("Выбранное значение для E-Mail адрес некорректно.", loginPage.getErrorMessage());
+        String errorMessage = loginPage.inputEmail("a.dgdg@rambler.ru")
+                .inputPassword("dddd")
+                .putButtonEnter()
+                .getErrorMessage();
+        Assertions.assertEquals("Выбранное значение для E-Mail адрес некорректно.", errorMessage);
     }
 
     @AfterEach
