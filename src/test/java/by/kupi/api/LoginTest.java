@@ -14,4 +14,11 @@ public class LoginTest {
                 .statusCode(422)
                 .body("message", equalTo("Выбранное значение для E-Mail адрес некорректно."));*/
     }
+
+    @Test
+    public void testLogin2() {
+        UserAuthService userAuthService = new UserAuthService();
+        userAuthService.doRequest("cbc@jb.com", "");
+        userAuthService.printResponse();
+    }
 }

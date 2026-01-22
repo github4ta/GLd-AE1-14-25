@@ -1,30 +1,15 @@
 package by.kupi.api;
 
-import io.restassured.response.Response;
+import io.restassured.response.*;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 import static io.restassured.RestAssured.given;
 
 public class UserAuthService {
-    private String UrlUserAuth = "https://kupi.by/user/auth";
+    private String urlUtherAuth = "https://kupi.by/user/auth";
 
     private Response response;
-
-    public void doRequest() {
-        response = given()
-                .queryParams(getQueryParams())
-                .headers(getHeaders())
-                .body(getBody())
-                .when()
-                .post(UrlUserAuth);
-    }
-
-    public void printResponse() {
-        response.then()
-                .log().all();
-    }
 
     private Map<String, String> getQueryParams() {
         Map<String, String> queryParams = new HashMap<>();
@@ -39,16 +24,34 @@ public class UserAuthService {
         return headers;
     }
 
-    private String getBody() {
-        String body = """
-                {
-                    "login": "login",
-                    "type": "email_password",
-                    "email": "it-test20012026@gmail.com",
-                    "password": "Password!234",
-                    "_token": "PV07i5GQ4yeGJG88IP81Fn2Ks1TiabPh1gWKkhNE"
-                }
-                """;
+    private String getBody(String email, String password) {
+        String body = "{\n" +
+                "\"login\": \"login\",\n" +
+                "\"type\": \"email_password\",\n" +
+                "\"email\": \"" + email + "\",\n" +
+                "\"password\": \"" + password + "\",\n" +
+                "\"_token\": \"PV07i5GQ4yeGJG88IP81Fn2Ks1TiabPh1gWKkhNE\"\n" +
+                "}";
+
         return body;
+    }
+
+    public void doRequest() {
+        doRequest("it-test20012026@gmail.com", "Password!234");
+    }
+
+    public void doRequest(String email, String password) {
+        response =
+                given().baseUri("https://kupi.by")
+                        .queryParams(getQueryParams())
+                        .headers(getHeaders())
+                        .body(getBody(email, password))
+                        .when()
+                        .post(urlUtherAuth);
+    }
+
+    public void printResponse() {
+        response.then()
+                .log().all();
     }
 }
