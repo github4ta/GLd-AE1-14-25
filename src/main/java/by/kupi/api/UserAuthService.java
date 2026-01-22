@@ -59,4 +59,8 @@ public class UserAuthService {
         return response.getStatusCode();
     };
 
+    public String getResponseMessage(){
+        return  response.body().jsonPath().getString("message");
+    }
+
 }
