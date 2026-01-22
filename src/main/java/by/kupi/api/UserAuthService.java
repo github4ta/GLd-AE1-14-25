@@ -54,4 +54,9 @@ public class UserAuthService {
         response.then()
                 .log().all();
     }
+
+    public int getStatusCode() {
+        return response.getStatusCode();
+    };
+
 }

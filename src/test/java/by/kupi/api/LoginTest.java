@@ -1,5 +1,6 @@
 package by.kupi.api;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class LoginTest {
@@ -8,6 +9,8 @@ public class LoginTest {
         UserAuthService userAuthService = new UserAuthService();
         userAuthService.doRequest();
         userAuthService.printResponse();
+
+        Assertions.assertEquals(422, userAuthService.getStatusCode());
 
         /*response.then()
                 .log().all()
@@ -20,5 +23,7 @@ public class LoginTest {
         UserAuthService userAuthService = new UserAuthService();
         userAuthService.doRequest("cbc@jb.com", "");
         userAuthService.printResponse();
+
+        Assertions.assertEquals(422, userAuthService.getStatusCode());
     }
 }
