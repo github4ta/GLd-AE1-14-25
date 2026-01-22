@@ -8,22 +8,19 @@ public class LoginTest {
     public void testLogin() {
         UserAuthService userAuthService = new UserAuthService();
         userAuthService.doRequest();
-        userAuthService.printResponse();
 
         Assertions.assertEquals(422, userAuthService.getStatusCode());
+        Assertions.assertEquals("Выбранное значение для E-Mail адрес некорректно.", userAuthService.getResponseMessage());
 
-        /*response.then()
-                .log().all()
-                .statusCode(422)
-                .body("message", equalTo("Выбранное значение для E-Mail адрес некорректно."));*/
     }
 
     @Test
     public void testLogin2() {
         UserAuthService userAuthService = new UserAuthService();
         userAuthService.doRequest("cbc@jb.com", "");
-        userAuthService.printResponse();
 
         Assertions.assertEquals(422, userAuthService.getStatusCode());
+        Assertions.assertEquals("Выбранное значение для E-Mail адрес некорректно. (and 1 more error)", userAuthService.getResponseMessage());
+
     }
 }
