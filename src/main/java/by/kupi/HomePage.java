@@ -1,13 +1,13 @@
 package by.kupi;
 
 import by.kupi.driver.Driver;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+//import org.apache.logging.log4j.LogManager;
+//import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class HomePage {
-    private static final Logger logger = LogManager.getLogger();
+   // private static final Logger logger = LogManager.getLogger();
 
     private final String HOME_URL = "https://kupi.by";
     public final By COOKIE_PATH = By.xpath("//div[@id='ck-pup-default']/div[@class='pup-ck__buttons']/button[@class='pup-ck__button pup-ck__button--primary']");
@@ -25,13 +25,13 @@ public class HomePage {
 
     public HomePage open(){
         driver.get(HOME_URL);
-        logger.info("Открылась домашняя страница");
+       // logger.info("Открылась домашняя страница");
         return this;
     }
 
     public HomePage clickCookie(){
         driver.findElement(COOKIE_PATH).click();
-        logger.info("Принимаем кукки");
+        //logger.info("Принимаем кукки");
         return this;
     }
 
@@ -46,7 +46,7 @@ public class HomePage {
 
     public String getCompanyTextInFooter(){
         String companyTextInFooter = driver.findElement(FOOTER).getText();
-        logger.info("Текс компании футер равен: " + companyTextInFooter );
+        //logger.info("Текс компании футер равен: " + companyTextInFooter );
         return companyTextInFooter;
     }
 }

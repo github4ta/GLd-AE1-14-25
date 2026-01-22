@@ -1,18 +1,13 @@
 package by.kupi.driver;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.*;
+import org.openqa.selenium.support.ui.*;
 
-import java.time.Duration;
+import java.time.*;
 
 public class Driver {
-    private static final Logger logger = LogManager.getLogger();
+    //private static final Logger logger = LogManager.getLogger();
 
     private static WebDriver driver;
 
@@ -25,7 +20,7 @@ public class Driver {
             driver = new ChromeDriver();
 
         }
-        logger.info("Создали хром-драйвер");
+        //logger.info("Создали хром-драйвер");
         return driver;
     }
 
@@ -33,7 +28,7 @@ public class Driver {
         if (driver != null) {
             driver.quit();
             driver = null;
-            logger.info("Закрыли хром-драйвер");
+           // logger.info("Закрыли хром-драйвер");
         }
     }
 
