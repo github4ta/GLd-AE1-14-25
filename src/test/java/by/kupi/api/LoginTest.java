@@ -1,7 +1,9 @@
 package by.kupi.api;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class LoginTest {
     @Test
@@ -9,9 +11,10 @@ public class LoginTest {
         UserAuthService userAuthService = new UserAuthService();
         userAuthService.doRequest();
 
-        Assertions.assertEquals(422, userAuthService.getStatusCode());
-        Assertions.assertEquals("Выбранное значение для E-Mail адрес некорректно.", userAuthService.getResponseMessage());
-
+        assertAll("Login",
+                () -> assertEquals(422, userAuthService.getStatusCode()),
+                () -> assertEquals("Выбранное значение для E-Mail адрес некорректно.", userAuthService.getResponseMessage())
+        );
     }
 
     @Test
@@ -19,8 +22,9 @@ public class LoginTest {
         UserAuthService userAuthService = new UserAuthService();
         userAuthService.doRequest("cbc@jb.com", "");
 
-        Assertions.assertEquals(422, userAuthService.getStatusCode());
-        Assertions.assertEquals("Выбранное значение для E-Mail адрес некорректно. (and 1 more error)", userAuthService.getResponseMessage());
-
+        assertAll("Login",
+                () -> assertEquals(422, userAuthService.getStatusCode()),
+                () -> assertEquals("Выбранное значение для E-Mail адрес некорректно. (and 1 more error)", userAuthService.getResponseMessage())
+        );
     }
 }
