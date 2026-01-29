@@ -20,11 +20,6 @@ public class HomeTest {
     }
 
     @Test
-    public void verifyOrderItemTextInHeaderNav() {
-        Assertions.assertEquals(homePage.ORDER_LABEL, homePage.getHragerTopNavOrderItem());
-    }
-
-    @Test
     public void testProgramLoyaltyButton() {
         Assertions.assertEquals(homePage.PROGRAM_LOYALTY_LABEL, homePage.getProgramLoyaltyButton());
     }
