@@ -1,5 +1,6 @@
-package by.booklover.pages;
+package by.booklover.steps;
 
+import by.booklover.pages.HomePage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.jupiter.api.Assertions;
