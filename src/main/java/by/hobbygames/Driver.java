@@ -1,0 +1,26 @@
+package by.hobbygames;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Driver {
+    public static WebDriver driver;
+
+    private Driver() {
+    }
+
+    public static WebDriver getDriver(){
+            if (driver == null){
+                driver = new ChromeDriver();
+                driver.manage().window().maximize();
+            }
+        return driver;
+    }
+
+    public void quitDriver(){
+        if (driver!= null){
+            driver.quit();
+            driver = null;
+        }
+    }
+}
