@@ -14,7 +14,7 @@ public class AuthorizationTest {
         authorizationService.printResponse();
 
         assertAll(
-                Assertions.assertEquals              () -> (422, authorizationService.getStatusCode()),
+                () -> Assertions.assertEquals(422, authorizationService.getStatusCode()),
                 () -> Assertions.assertEquals("Поле E-Mail адрес обязательно для заполнения. (and 1 more error)", authorizationService.getMessage()),
                 () -> Assertions.assertEquals("Поле E-Mail адрес обязательно для заполнения.", authorizationService.getErrorsEmail()),
                 () -> Assertions.assertEquals("Поле Пароль обязательно для заполнения.", authorizationService.getErrorsPassword())
