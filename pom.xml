@@ -33,16 +33,6 @@
             <artifactId>rest-assured</artifactId>
             <version>6.0.0</version>
         </dependency>
-        <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-java</artifactId>
-            <version>7.33.0</version>
-        </dependency>
-        <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-junit-platform-engine</artifactId>
-            <version>7.33.0</version>
-        </dependency>
     </dependencies>
     <dependencyManagement>
         <dependencies>
