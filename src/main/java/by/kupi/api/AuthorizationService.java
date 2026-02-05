@@ -8,24 +8,22 @@ import java.util.Map;
 import static io.restassured.RestAssured.*;
 
 public class AuthorizationService {
+    private final String URL_USER_AUCH = "https://kupi.by/user/auth";
     private Response response;
 
     public void doRequest() {
-        response = given().baseUri("https://kupi.by").queryParams("t", "1770295767129").headers(getHeaders()).body(getDefaultBody()).when().post("https://kupi.by/user/auth");
+        response = given().queryParams(getQueryParams()).headers(getHeaders()).body(getDefaultBody()).when().post(URL_USER_AUCH);
 
     }
 
+    private Map<String, Object> getQueryParams() {
+        Map<String, Object> queryParams = new HashMap<>();
+        queryParams.put("t", "1770295767129");
+        return queryParams;
+    }
+
     private String getDefaultBody() {
-        String body = """
-                {
-                  "login": "login",
-                  "type": "email_password",
-                  "email": "ajsgdu@jkhk.com",
-                  "password": "password",
-                  "_token": "roGSRVAmr5kGiRtkyi3cARYrCdcqxf88Po9TUmcw"
-                }
-                """;
-        return body;
+        return getBody("ajsgdu@jkhk.com", "password");
     }
 
     private String getBody(String email, String password) {
@@ -42,7 +40,7 @@ public class AuthorizationService {
     }
 
     public void doRequest(String email, String password) {
-        response = given().baseUri("https://kupi.by").queryParams("t", "1770295767129").headers(getHeaders()).body(getBody(email, password)).when().post("https://kupi.by/user/auth");
+        response = given().queryParams(getQueryParams()).headers(getHeaders()).body(getBody(email, password)).when().post(URL_USER_AUCH);
     }
 
     private Map<String, Object> getHeaders() {
@@ -56,4 +54,21 @@ public class AuthorizationService {
     public void printResponse() {
         response.then().log().all();
     }
+
+    public int getStatusCode(){
+        return response.getStatusCode();
+    }
+
+    public String getMessage(){
+        return response.jsonPath().getString("message");
+    }
+
+    public String getErrorsEmail(){
+        return response.jsonPath().getString("errors.email[0]");
+    }
+
+    public String getErrorsPassword(){
+        return response.jsonPath().getString("errors.password[0]");
+    }
+
 }
